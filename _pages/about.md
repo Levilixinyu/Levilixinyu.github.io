@@ -5,6 +5,8 @@ permalink: /
 author_profile: true
 ---
 
+<div class="about-text">
+
 <img src="/images/headshot.jpg" alt="Xinyu Li" style="width:160px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 6px rgba(0,0,0,0.15);">
 
 ### Hi there, I’m **Xinyu Li (李心钰)**
@@ -40,3 +42,4 @@ My current research focuses on two components:
 Thanks for visiting my page — I hope you find something inspiring here. 🌿
 </p>
 
+</div>
