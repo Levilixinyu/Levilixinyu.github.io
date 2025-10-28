@@ -52,7 +52,7 @@ author_profile: true
 .page__content ol,
 .page__content ul {
   text-align: left !important;
-  margin-left: 1rem;     
+  margin-left: 0.5rem;     
 }
 
 .page__content > p:last-child {
@@ -139,7 +139,8 @@ My current research focuses on two components:
   <p class="timeline-item">
     <strong>2024 – Present</strong><br>
     <span>Graduate Teaching Assistant, UT-Austin</span><br>
-    KIN 424K Applied Human Anatomy, KIN 336 Neuromuscular Control
+    KIN 424K Applied Human Anatomy 
+    KIN 336 Neuromuscular Control
   </p>
 
   <p class="timeline-item">
