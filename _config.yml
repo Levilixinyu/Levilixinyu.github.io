@@ -15,7 +15,7 @@ url                      : https://Levilixinyu.github.io # The base hostname & p
 author:
   # Biographic information
   avatar           : "/images/headshot.jpg"
-  name             : "Xinyu Li (李心钰）"
+  name             : "Xinyu Li"
   bio              : "Ph.D. Candidate in Neuromuscular Physiology"
   location         : "Austin, TX"
   employer         : "University of Texas at Austin"
@@ -23,7 +23,7 @@ author:
 
   # Academic websites
   UT Profile       : "https://education.utexas.edu/student/xinyu_li/"
-  scholar          : "https://scholar.google.com/citations?user=s2OLwSsAAAAJ&hl=en"
+  google_scholar   : "https://scholar.google.com/citations?user=s2OLwSsAAAAJ&hl=en"
   researchgate     : "https://www.researchgate.net/profile/Xinyu-Li-196"
  
 # Appearance
