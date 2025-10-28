@@ -17,11 +17,14 @@ author_profile: true
 .page__content h1,
 .page__content h2,
 .page__content h3 {
-  color: #0b2545;
-  border-bottom: 2px solid rgba(212,175,55,0.35);
-  padding-bottom: 0.3rem;
+  color: #0b2545;                      
+  border-bottom: none;                 
   margin-top: 2rem;
   font-weight: 600;
+  background-color: rgba(11,37,69,0.04); 
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;                  
+  box-shadow: 0 1px 3px rgba(11,37,69,0.08); 
 }
 
 .page__content a {
