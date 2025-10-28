@@ -1,11 +1,11 @@
 
 
 # Basic Site Settings
+baseurl: ""  # keep blank for user.github.io sites
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Xinyu Li"
+title                    : "Xinyu Li 李心钰"
 title_separator          : "-"
-name                     : &name "李心钰"
 description              : &description "Ph.D. Candidate at University of Texas at Austin"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://Levilixinyu.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
 
@@ -13,8 +13,7 @@ author:
   # Biographic information
   avatar           : "/images/xinyuli.jpg"
   name             : "Xinyu Li"
-  pronouns         : # example: "she/her"  
-  bio              : "I am a Ph.D. candidate in the Neuromuscular Physiology Research Lab. My research interests focus on the effects of neuromuscular electrical stimulation (NMES) on EMG-EMG coherence and motor unit recruitment patterns."
+  bio              : "Ph.D. Candidate in Neuromuscular Physiology"
   location         : "Austin, TX"
   employer         : "University of Texas at Austin"
   email            : "xinyul@utexas.edu" 
@@ -24,14 +23,14 @@ author:
   googlescholar    : "https://scholar.google.com/citations?user=s2OLwSsAAAAJ&hl=en"
   researchgate     : "https://www.researchgate.net/profile/Xinyu-Li-196"
  
-  # Appearance
-  theme_skin: "contrast"
-  primary_color: "#0b2545"     
-  accent_color: "#d4af37"    
-  markdown: kramdown
-  paginate: 5
+# Appearance
+theme_skin: "contrast"
+primary_color: "#0b2545"     
+accent_color: "#d4af37"    
+markdown: kramdown
+paginate: 5
 
-  # These settings control the types of collections used by the template
+# These settings control the types of collections used by the template
 collections:
   research:
     output: true
@@ -47,8 +46,6 @@ collections:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  books:
-    title: 'Books'
   manuscripts:
     title: 'Journal Articles'    
   conferences:
@@ -56,44 +53,14 @@ publication_category:
 
 
 # Analytics
-analytics:
-  provider               :  "false" # false (default), "google", "google-universal", "google-analytics-4", "custom"
-  google:
-    tracking_id          :
-
-
-# Reading Files
 include:
-  - .htaccess
   - _pages
   - files
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
-  - .asset-cache
-  - .bundle
-  - .github
-  - .jekyll-assets-cache
-  - .sass-cache
-  - assets/js/_main.js
-  - assets/js/plugins
-  - assets/js/vendor
-  - CHANGELOG
-  - Capfile
-  - config
-  - Dockerfile
-  - Gemfile
-  - Gruntfile.js
-  - gulpfile.js
-  - LICENSE
-  - local
-  - log
   - node_modules
-  - package.json*
-  - Rakefile
-  - README
-  - tmp
   - vendor
+  - tmp
+  - README
 keep_files:
   - .git
   - .svn
@@ -102,11 +69,7 @@ markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
 
 # Conversion
-markdown: kramdown
 highlighter: rouge
-lsi: false
-excerpt_separator: "\n\n"
-incremental: false
 
 
 # Markdown Processing
@@ -121,38 +84,25 @@ kramdown:
   enable_coderay: false
 
 
-
-
 # These settings control how pages and collections are included in the site
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
   - scope:
       path: ""
       type: pages
     values:
       layout: single
       author_profile: true
-  # _teaching
+
+  # Research collection
   - scope:
       path: ""
-      type: teaching
+      type: research
     values:
       layout: single
       author_profile: true
       share: true
-      comments: true
-  # _publications
+
+  # Publications collection
   - scope:
       path: ""
       type: publications
@@ -160,37 +110,37 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comments: true
-  # _portfolio
+
+  # Teaching collection
   - scope:
       path: ""
-      type: portfolio
+      type: teaching
     values:
       layout: single
       author_profile: true
       share: true
-      comment: true
-  # _talks
+
+  # Life collection (for personal stories, reflections, or milestones)
   - scope:
       path: ""
-      type: talks
+      type: life
     values:
-      layout: talk
+      layout: single
       author_profile: true
       share: true
 
-
-# Sass/SCSS
-sass:
-  sass_dir: _sass
-  style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
+  # Gallery collection (for photos, figures, lab or conference images)
+  - scope:
+      path: ""
+      type: gallery
+    values:
+      layout: single
+      author_profile: false
+      share: false
 
 # Outputting
 permalink: /:categories/:title/
-# paginate: 5 # amount of posts to show
-# paginate_path: /page:num/
-timezone: Etc/UTC # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/Chicago # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins
@@ -202,48 +152,4 @@ plugins:
   - jekyll-redirect-from
   - jemoji
 
-# Mimic GitHub Pages with --safe
-whitelist:
-  - jekyll-feed
-  - jekyll-gist
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-redirect-from
-  - jemoji
 
-
-# Archives
-#  Type
-#  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
-#  - Jekyll Archives plugin archive pages ~> type: jekyll-archives
-#  Path (examples)
-#  - Archive page should exist at path when using Liquid method or you can
-#    expect broken links (especially with breadcrumbs enabled)
-#  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
-#  - <base_path/categories/my-awesome-category/index.html ~> path: /categories/
-#  - <base_path/my-awesome-category/index.html ~> path: /
-category_archive:
-  type: liquid
-  path: /categories/
-tag_archive:
-  type: liquid
-  path: /tags/
-# https://github.com/jekyll/jekyll-archives
-# jekyll-archives:
-#   enabled:
-#     - categories
-#     - tags
-#   layouts:
-#     category: archive-taxonomy
-#     tag: archive-taxonomy
-#   permalinks:
-#     category: /categories/:name/
-#     tag: /tags/:name/
-
-
-# HTML Compression
-# - https://jch.penibelst.de/
-compress_html:
-  clippings: all
-  ignore:
-    envs: development
