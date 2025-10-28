@@ -11,6 +11,9 @@ author_profile: true
   background-color: #f9fafc;
   color: #0b2545;
   font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
   padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
