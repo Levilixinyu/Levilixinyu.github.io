@@ -7,10 +7,6 @@ author_profile: true
 
 <div class="about-text">
 
-<img src="/images/gallery.jpg" alt="Xinyu Li"
-     style="width:160px;border-radius:10px;margin-bottom:1rem;box-shadow:0 0 6px rgba(0,0,0,0.15);">
-
-
 ### Hi there, I’m **Xinyu Li (李心钰)**
 
 I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by [Dr. Lisa Griffin](https://sites.edb.utexas.edu/nmus/).  
