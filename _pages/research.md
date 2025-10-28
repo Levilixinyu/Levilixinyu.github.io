@@ -37,12 +37,6 @@ author_profile: true
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
   padding: 1.5rem;
   margin-bottom: 1rem;
-  color: #0b2545;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
-  font-weight: 400;
-  font-size: 15px;
-  line-height: 1.7;
-  letter-spacing: 0;
 }
 
 .research-card h3 {
