@@ -9,8 +9,7 @@ author_profile: true
 /* ========== Research Page Styling  ========== */
 .page__content {
   background-color: #f9fafc;
-  color: #0b2545;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  color: #d4af37;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.7;
