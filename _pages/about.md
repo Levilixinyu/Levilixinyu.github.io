@@ -9,12 +9,9 @@ author_profile: true
   background-color: #f9fafc;    
   color: #0b2545;               
   font-family: "Helvetica Neue", "Roboto", sans-serif;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(11,37,69,0.12);
-  max-width: 1100px;
-  margin: 0 auto;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  box-shadow:  0 4px 12px rgba(11,37,69,0.12);
 }
 
 .page__content h1,
@@ -62,44 +59,6 @@ author_profile: true
   color: #555;
   font-size: 0.9rem;
   text-align: center;
-}
-
-/* 🌙 真正的夜间模式切换 */
-@media (prefers-color-scheme: dark) {
-  body, html {
-    background-color: #0b1f35 !important;
-  }
-
-  .page__content {
-    background-color: #162b46;  /* 比原来更亮一点的深蓝 */
-    color: #eaeaea;
-    box-shadow: 0 4px 12px rgba(212,175,55,0.1);
-  }
-
-  .page__content h1,
-  .page__content h2,
-  .page__content h3 {
-    color: #f5f5f5;
-    border-bottom: 1.5px solid rgba(212,175,55,0.45);
-  }
-
-  .page__content a {
-    color: #d4af37;
-  }
-
-  .page__content a:hover {
-    color: #f0c85d;
-    text-shadow: 0 0 6px rgba(212,175,55,0.6);
-  }
-
-  .timeline-container {
-    background: rgba(255,255,255,0.05);
-    border-left: 3px solid #d4af37;
-  }
-
-  .timeline-item span {
-    color: #f0f0f0;
-  }
 }
 </style>
 
