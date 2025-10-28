@@ -7,7 +7,7 @@ author_profile: true
 
 <div class="about-text">
 
-<img src="/images/headshot.jpg" alt="Xinyu Li" style="width:160px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 6px rgba(0,0,0,0.15);">
+<img src="/images/about.jpg" alt="Xinyu Li" style="width:160px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 6px rgba(0,0,0,0.15);">
 
 ### Hi there, I’m **Xinyu Li (李心钰)**
 
