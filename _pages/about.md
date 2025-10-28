@@ -27,15 +27,6 @@ My current research focuses on two components:
 - Functional electrical stimulation and wearable rehabilitation technology  
 - Gait analysis in individuals with neurological disorders 
 
-
----
-
-### 📫 Contact 
-- ✉️ [xinyul@utexas.edu](mailto:xinyul@utexas.edu)  
-- 🔗 [LinkedIn](https://linkedin.com/in/xinyul2624)
-- 📑 [ResearchGate](https://www.researchgate.net/profile/Xinyu-Li-196)
-
-
 ---
 
 <p style="text-align:center; font-size:14px; color:#555; margin-top:1.5rem;">
