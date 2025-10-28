@@ -49,17 +49,20 @@ author_profile: true
   margin: 1rem 0;
 }
 
+.page__content ol,
 .page__content ul {
-  margin-left: 1.5rem;
+  text-align: left !important;
+  margin-left: 1.5rem;        
   font-size: 0.95rem;
   line-height: 1.6;
 }
 
-.page__content p:last-child {
+.page__content > p:last-child {
   color: #555;
   font-size: 0.9rem;
   text-align: center;
 }
+  
 </style>
 <div class="about-text">
 
