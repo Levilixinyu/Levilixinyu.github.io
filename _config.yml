@@ -41,6 +41,8 @@ collections:
     output: true
   life:
     output: true
+  gallery: 
+    output: true
 
 
 # Publication Category - The following the list of publication categories and their headings
