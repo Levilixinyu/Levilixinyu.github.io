@@ -19,6 +19,7 @@ author_profile: true
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
 }
 
+
 /* Section title */
 .page__content h2 {
   color: #0b2545;
@@ -33,9 +34,13 @@ author_profile: true
 /* Research cards */
 .research-card {
   background: rgba(255,255,255,0.96);
-  border-left: 3px solid #d4af37;
   border-radius: 10px;
-  padding: 1.2rem 1.5rem;
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.7;
+  text-align: left;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
   box-shadow: 0 2px 6px rgba(11,37,69,0.08);
   transition: all 0.25s ease-in-out;
@@ -70,22 +75,22 @@ author_profile: true
 ### 🔬 Current Research Projects
 
 <div class="research-card">
-  <h3>⚡ Neuromuscular Electrical Stimulation and EMG Coherence</h3>
+  <h3>Neuromuscular Electrical Stimulation and EMG Coherence</h3>
   <p>Exploring how neuromuscular electrical stimulation (NMES) modulates corticospinal drive and intermuscular EMG–EMG coherence in individuals with rotator cuff disease. Integrating advanced motor unit decomposition and coherence spectral analysis.</p>
 </div>
 
 <div class="research-card">
-  <h3>🧠 Mechanisms of Motor Unit Coordination</h3>
+  <h3>Mechanisms of Motor Unit Coordination</h3>
   <p>Studying how motor unit synchronization, recruitment, and firing rate adapt under fatigue and pain conditions, revealing the cooperative dynamics between cortical and spinal motor control.</p>
 </div>
 
 <div class="research-card">
-  <h3>🚶‍♀️ Gait Analysis in Neuropsychiatric Populations</h3>
+  <h3>Gait Analysis in Neuropsychiatric Populations</h3>
   <p>Examining gait stability and interlimb coordination in individuals with bipolar disorder using 3D motion capture and EMG analysis to understand sensorimotor integration and cognitive-motor coupling.</p>
 </div>
 
 <div class="research-card">
-  <h3>🔧 Wearable NMES Technology for Rehabilitation</h3>
+  <h3>Wearable NMES Technology for Rehabilitation</h3>
   <p>Developing NMES-based wearable systems with adaptive real-time feedback control to enhance muscle activation, restore function, and support motor recovery in older adults and clinical populations.</p>
 </div>
 
