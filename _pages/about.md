@@ -139,7 +139,7 @@ My current research focuses on two components:
   <p class="timeline-item">
     <strong>2024 – Present</strong><br>
     <span>Graduate Teaching Assistant, UT-Austin</span><br>
-    KIN 424K Applied Human Anatomy 
+    KIN 424K Applied Human Anatomy<br>
     KIN 336 Neuromuscular Control
   </p>
 
