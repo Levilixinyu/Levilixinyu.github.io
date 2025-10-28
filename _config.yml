@@ -9,10 +9,10 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Your Name / Site Title"
+title                    : "Xinyu Li"
 title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+name                     : &name "Chloe"
+description              : &description "Ph.D. Candidate at University of Texas at Austin"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://academicpages.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -26,23 +26,16 @@ author:
   avatar           : "profile.png"
   name             : "Your Sidebar Name"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
+  bio              : "I am a Ph.D. candidate in the Neuromuscular Physiology Research Lab. My research interests focus on the effects of neuromuscular electrical stimulation (NMES) on EMG-EMG coherence and motor unit recruitment patterns."
+  location         : "Austin, TX"
+  employer         : "University of Texas at Austin"
   uri              : # URL
-  email            : "none@example.org" 
+  email            : "xinyul@utexas.edu" 
 
   # Academic websites
-  academia         : # URL
-  arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
-  inspire-hep      : # URL
-  impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
-  semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
-  scopus           : # URL
+  UT Profile       : "https://education.utexas.edu/student/xinyu_li/"
+  googlescholar    : "https://scholar.google.com/citations?user=s2OLwSsAAAAJ&hl=en"
+  researchgate     : "https://www.researchgate.net/profile/Xinyu-Li-196"
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
