@@ -140,4 +140,29 @@ html[data-theme="dark"] .author__content {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* === 强制全局背景适配深蓝金色主题 === */
+html,
+body,
+.page,
+.site,
+.page__inner-wrap,
+.layout--single,
+#main,
+.wrapper {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* 深色模式覆盖 */
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] .page,
+html[data-theme="dark"] .site,
+html[data-theme="dark"] #main,
+html[data-theme="dark"] .wrapper {
+  background-color: #0b1f35 !important;  /* 深蓝主色 */
+  color: #f1f1f1 !important;
+}
+
 
