@@ -36,9 +36,8 @@ author_profile: true
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
   padding: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: #0b2545;
-
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   font-weight: 400;
   font-size: 15px;
@@ -49,12 +48,17 @@ author_profile: true
 .research-card h3 {
   color: #d4af37;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
 }
 
 .research-card p {
-  margin: 0.5rem 0 0;
+ color: #0b2545;
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0;
 }
 
 /* Adjust spacing for clean layout */
