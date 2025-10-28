@@ -32,34 +32,29 @@ author_profile: true
 
 /* Research cards */
 .research-card {
-  background: rgba(255,255,255,0.96);
-  border-radius: 10px;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.7;
-  text-align: left;
+  background-color: #f9fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(11,37,69,0.12);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 2px 6px rgba(11,37,69,0.08);
-  transition: all 0.25s ease-in-out;
-}
-.research-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(11,37,69,0.15);
+  margin-bottom: 2rem;
+  color: #0b2545;
+
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0;
 }
 
-/* Card text */
 .research-card h3 {
   color: #d4af37;
-  font-size: 1.05rem;
   font-weight: 600;
-  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
 }
+
 .research-card p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #222;
+  margin: 0.5rem 0 0;
 }
 
 /* Adjust spacing for clean layout */
