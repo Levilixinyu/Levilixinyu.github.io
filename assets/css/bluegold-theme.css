@@ -1,7 +1,7 @@
 /* ========== 🌙 Dark Mode (auto + manual) ========== */
 
 /* 手动切换（点击右上角月亮） */
-html[data-theme="dark"] body {
+html[data-theme="dark"] {
   background-color: #0b1f35 !important;
   color: #eaeaea !important;
 }
