@@ -60,8 +60,32 @@ author_profile: true
   font-size: 0.9rem;
   text-align: center;
 }
-  
+
+/* 🌙 夜间模式自动切换 */
+@media (prefers-color-scheme: dark) {
+  .page__content {
+    background-color: #0b2545;   /* 深蓝背景 */
+    color: #f1f1f1;              /* 淡金/白文字 */
+    box-shadow: 0 4px 12px rgba(212,175,55,0.15);
+  }
+
+  .page__content h3, 
+  .page__content a {
+    color: #d4af37;              /* 金色强调 */
+  }
+
+  .page__content a:hover {
+    color: #f0c85d;
+    text-shadow: 0 0 6px rgba(212,175,55,0.6);
+  }
+
+  .timeline-container {
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid #d4af37;
+  }
+}
 </style>
+
 <div class="about-text">
 
 ### Hi there, I’m **Xinyu Li (李心钰)**
