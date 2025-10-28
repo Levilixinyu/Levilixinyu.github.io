@@ -39,7 +39,7 @@ My current research focuses on two components:
 ---
 
 <p style="text-align:center; font-size:14px; color:#555; margin-top:1.5rem;">
-Thanks for visiting my page — I hope you find something inspiring here. 🌿
+Thanks for visiting my page! Hope you enjoy your life!🎐
 </p>
 
 </div>
