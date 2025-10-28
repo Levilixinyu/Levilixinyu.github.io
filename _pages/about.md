@@ -11,20 +11,19 @@ author_profile: true
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 3px 10px rgba(11,37,69,0.08);
+  box-shadow:  0 4px 12px rgba(11,37,69,0.12);
 }
 
 .page__content h1,
 .page__content h2,
 .page__content h3 {
   color: #0b2545;                      
-  border-bottom: 2px solid rgba(212,175,55,0.35);                 
+  border-bottom: 1.5px solid rgba(212,175,55,0.4);                 
   margin-top: 2rem;
-  font-weight: 600;
-  background-color: rgba(11,37,69,0.04); 
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;                  
-  box-shadow: 0 1px 3px rgba(11,37,69,0.08); 
+  text-align: left;
+  font-weight: 600;  
+  padding-bottom: 0.25rem;
+  font-size: 1.1rem;               
 }
 
 .page__content a {
