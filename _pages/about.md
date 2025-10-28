@@ -1,14 +1,21 @@
 ---
-layout: archive
+layout: single
 title: "About Me"
 permalink: /
+author_profile: true
 ---
 
-<img src="/images/xinyuli.jpg" width="220" style="border-radius: 15px; float: right; margin: 20px;">
+<div class="about-text">
 
-I am a Ph.D. Candidate studying Neuromuscular Physiology at the University of Texas at Austin (https://sites.edb.utexas.edu/nmus/), supervised by Dr. Lisa Griffin.  
+<img src="/images/headshot.jpg" alt="Xinyu Li" style="width:160px;border-radius:50%;margin-bottom:1rem;box-shadow:0 0 6px rgba(0,0,0,0.15);">
 
-My research focuses on understanding 1) how neuromuscular control adapts under various loading conditions, fatigue, and pain, and 2) how neuromuscular electrical stimulation (NMES) can be used to restore motor unit firing patterns and muscle function.
+### Hi there, I’m **Xinyu Li (李心钰)**
+
+I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by Dr. Lisa Griffin (https://sites.edb.utexas.edu/nmus/).  
+
+My current research focuses on two components:
+1) how neuromuscular control adapts under various loading conditions, fatigue, and pain;
+2) how neuromuscular electrical stimulation (NMES) can be used to restore motor unit firing patterns, muscle architecture, and functions.
 
 🐈 Cat person, 100%.
 
@@ -20,14 +27,10 @@ My research focuses on understanding 1) how neuromuscular control adapts under v
 - Functional electrical stimulation and wearable rehabilitation technology  
 - Gait analysis in individuals with neurological disorders 
 
----
-
-### 💥 Ultimate Goals
-> *Bridging neuromuscular control and wearable technologies to enhance human quality of life.*
 
 ---
 
-### 📫 Contact
-- 📍 Austin, TX  
+### 📫 Contact 
 - ✉️ [xinyul@utexas.edu](mailto:xinyul@utexas.edu)  
-- 🔗 [LinkedIn](https://linkedin.com/in/xinyul2624) | [ResearchGate](https://www.researchgate.net/profile/Xinyu-Li-196)
+- 🔗 [LinkedIn](https://linkedin.com/in/xinyul2624)
+- 📑 [ResearchGate](https://www.researchgate.net/profile/Xinyu-Li-196)
