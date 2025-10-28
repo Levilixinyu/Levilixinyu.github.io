@@ -58,7 +58,7 @@ My current research focuses on two components:
   <p class="timeline-item">
     <strong style="color:#d4af37;">2025 – Present</strong><br>
     <span style="color:#0b2545;">Ph.D. Candidate, Neuromuscular Physiology Research Lab, University of Texas at Austin</span><br>
-    Leading the dissertation project on how <strong>neuromuscular electrical stimulation (NMES)</strong> modulates neuromuscular coordination and <strong>EMG–EMG coherence</strong> in individuals with rotator cuff disease.
+    Leading the project on how NMES modulates neuromuscular control patterns across the rotator cuff and deltoid muscles in individuals with rotator cuff disease.
   </p>
 
   <p class="timeline-item">
@@ -73,14 +73,14 @@ My current research focuses on two components:
 
   <p class="timeline-item">
     <strong style="color:#d4af37;">2021 – 2022</strong><br>
-    <span style="color:#0b2545;">Graduate Research Assistant, Behavioral Biomechanics Lab, University of Michigan - Ann Arbor</span><br>
-    Investigated the longitudinal stability of gait behavior in individuals with bipolar disorder using Vicon motion capture and EMG analysis.
+    <span style="color:#0b2545;"> M.S. in Kinesiology, Behavioral Biomechanics Lab, University of Michigan - Ann Arbor</span><br>
+    Investigated the longitudinal stability of gait behavior in individuals with bipolar disorder using Vicon motion capture, force plates, and EMG analysis.
   </p>
 
   <p class="timeline-item">
     <strong style="color:#d4af37;">2019 – 2020</strong><br>
-    <span style="color:#0b2545;">Undergraduate Research, Beijing Sport University / Peking University Third Hospital</span><br>
-    Completed clinical rotations in Rehabilitation Medicine; developed a pilot study using functional electrical stimulation (FES) to enhance early-stage motor recovery after stroke.
+    <span style="color:#0b2545;"> B.S. in Sports Medicine and Rehabilitation, Beijing Sport University </span><br>
+    Developed a clinical pilot study using functional electrical stimulation (FES) to enhance early-stage upper limb function recovery after stroke.
   </p>
 
 </div>
