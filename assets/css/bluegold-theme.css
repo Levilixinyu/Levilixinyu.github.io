@@ -1,0 +1,165 @@
+/* ============================================ *
+   Xinyu Li Blue-Gold Academic Theme
+   Supports auto + manual dark mode
+   ============================================ */
+
+/* ========== Base Typography ========== */
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #0b2545;              /* 深蓝文字 */
+  background-color: #f9fafc;   /* 浅蓝灰底 */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 600;
+  color: #0b2545;
+  letter-spacing: 0.5px;
+  border-bottom: 1.5px solid rgba(212,175,55,0.35);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+}
+
+/* Links */
+a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+a:hover {
+  color: #f0c85d;
+  text-shadow: 0 0 6px rgba(212,175,55,0.5);
+}
+
+/* Lists and Paragraphs */
+p, ul, ol {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 15px;
+  line-height: 1.8;
+  color: inherit;
+}
+
+/* About/Content Blocks */
+.page__content, .about-text {
+  background-color: rgba(11,37,69,0.02);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(11,37,69,0.08);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Images */
+img {
+  border-radius: 14px;
+  border: 2px solid rgba(212,175,55,0.3);
+  box-shadow: 0 3px 8px rgba(11,37,69,0.08);
+  transition: box-shadow 0.3s ease;
+}
+img:hover {
+  box-shadow: 0 4px 12px rgba(11,37,69,0.15);
+}
+
+/* Footer */
+.site-footer {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 1.2px solid rgba(11,37,69,0.1);
+  margin: 1.5rem 0;
+}
+
+/* ========== Timeline Aesthetic ========== */
+.timeline-container {
+  border-left: 3px solid #d4af37;
+  padding-left: 1.2rem;
+  margin: 2rem 0;
+  background: rgba(11,37,69,0.03);
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(11,37,69,0.08);
+}
+
+.timeline-item {
+  margin-bottom: 1.2rem;
+  transition: all 0.25s ease-in-out;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #0b2545;
+}
+
+.timeline-item strong {
+  font-size: 0.95rem;
+  color: #d4af37;
+  transition: all 0.25s ease-in-out;
+}
+
+.timeline-item:hover strong {
+  color: #f0c85d;
+  text-shadow: 0 0 6px rgba(212,175,55,0.7);
+}
+.timeline-item:hover {
+  transform: translateX(4px);
+}
+
+.timeline-item span {
+  font-size: 0.83rem;
+  color: #0b2545;
+  font-weight: 400;
+}
+
+/* ========== 🌙 Dark Mode (auto + manual) ========== */
+html[data-theme="dark"] body,
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #0b1f35 !important;
+    color: #eaeaea !important;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: #f8f8f8 !important;
+    border-bottom: 1.5px solid rgba(212,175,55,0.5);
+  }
+
+  a {
+    color: #d4af37 !important;
+  }
+  a:hover {
+    color: #f0c85d !important;
+    text-shadow: 0 0 6px rgba(212,175,55,0.6);
+  }
+
+  .page__content, .about-text {
+    background-color: rgba(255,255,255,0.05);
+    color: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.1);
+  }
+
+  .timeline-container {
+    background: rgba(255,255,255,0.05);
+    border-left: 3px solid #d4af37;
+    box-shadow: 0 2px 6px rgba(212,175,55,0.1);
+  }
+
+  .timeline-item {
+    color: #eaeaea;
+  }
+
+  img {
+    border: 2px solid rgba(212,175,55,0.5);
+    box-shadow: 0 3px 8px rgba(212,175,55,0.15);
+  }
+
+  .site-footer {
+    color: #ccc;
+  }
+}
