@@ -4,7 +4,7 @@
 baseurl: ""  # keep blank for user.github.io sites
 locale                   : "en-US"
 site_theme               : "default" # Currently available options are "default", "air"
-title                    : "Xinyu Li 李心钰"
+title                    : "Xinyu Li"
 title_separator          : "-"
 description              : &description "Ph.D. Candidate at University of Texas at Austin"   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://Levilixinyu.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
@@ -12,7 +12,7 @@ url                      : https://Levilixinyu.github.io # The base hostname & p
 author:
   # Biographic information
   avatar           : "/images/headshot.JPG"
-  name             : "Xinyu Li"
+  name             : "Xinyu Li (李心钰）"
   bio              : "Ph.D. Candidate in Neuromuscular Physiology"
   location         : "Austin, TX"
   employer         : "University of Texas at Austin"
