@@ -1,4 +1,7 @@
-
+kramdown:
+  input: GFM
+  hard_wrap: false
+  parse_block_html: true
 
 # Basic Site Settings
 baseurl: ""  # keep blank for user.github.io sites
@@ -76,6 +79,7 @@ highlighter: rouge
 kramdown:
   input: GFM
   hard_wrap: false
+  parse_block_html: true
   auto_ids: true
   footnote_nr: 1
   entity_output: as_char
