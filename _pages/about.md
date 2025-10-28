@@ -52,9 +52,7 @@ author_profile: true
 .page__content ol,
 .page__content ul {
   text-align: left !important;
-  margin-left: 1.5rem;        
-  font-size: 0.95rem;
-  line-height: 1.6;
+  margin-left: 1rem;     
 }
 
 .page__content > p:last-child {
