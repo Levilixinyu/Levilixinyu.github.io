@@ -27,6 +27,10 @@ My current research focuses on two components:
 
 ---
 
+<img src="/images/brain.jpg"
+     alt="Brain"
+     style="width:320px;border-radius:20px;object-fit:cover;box-shadow:0 2px 10px rgba(0,0,0,0.2);margin:1.2rem 0;">
+
 <p style="text-align:center; font-size:14px; color:#555; margin-top:1.5rem;">
 Thanks for visiting my page! Hope you enjoy your life!🎐
 </p>
