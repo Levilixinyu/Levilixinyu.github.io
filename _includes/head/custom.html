@@ -14,110 +14,56 @@ body {
   font-weight: 300;
   font-size: 15px;
   line-height: 1.7;
-  color: #0b2545;  /* 深蓝文字 */
-  background-color: #f9fafc;  /* 浅灰蓝背景 */
-  transition: background-color 0.4s ease, color 0.4s ease;
+  color: #1e1e1e;
+  background-color: #ffffff;
 }
 
-/* ===== Headings ===== */
+/* Headings */
 h1, h2, h3, h4, h5 {
   font-family: 'Playfair Display', 'Georgia', serif;
   font-weight: 600;
   color: #0b2545; /* 深蓝主色 */
   letter-spacing: 0.5px;
-  border-bottom: 1.5px solid rgba(212,175,55,0.4);
-  padding-bottom: 0.3rem;
-  margin-top: 2rem;
 }
 
-/* ===== Links ===== */
+/* Links */
 a {
   color: #d4af37; /* 金色强调 */
   text-decoration: none;
-  transition: all 0.25s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 a:hover {
-  color: #f0c85d;
-  text-shadow: 0 0 6px rgba(212,175,55,0.5);
+  color: #b38e2e;
+  text-decoration: underline;
 }
 
-/* ===== About page text block ===== */
+/* About page text block */
 .about-text {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-weight: 300;
   font-size: 15px;
   line-height: 1.8;
-  color: #0b2545;
-  max-width: 850px;
+  color: #333;
+  max-width: 750px;
   margin: auto;
-  padding: 0 1.2rem 2rem 1.2rem;
-  background: rgba(11,37,69,0.02);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(11,37,69,0.08);
+  padding: 0 1rem;
 }
 
-/* ===== Navigation bar ===== */
+/* Navigation bar */
 .nav__items a {
   font-weight: 400;
   letter-spacing: 0.3px;
 }
 
-/* ===== Footer ===== */
+/* Footer */
 .site-footer {
   font-size: 13px;
-  color: #555;
+  color: #777;
 }
 
-/* ===== Soften horizontal lines ===== */
+/* Optional: Soften horizontal lines */
 hr {
   border: none;
-  border-top: 1.2px solid rgba(11,37,69,0.1);
-}
-
-/* ===== Images ===== */
-img {
-  border-radius: 14px;
-  border: 2px solid rgba(212,175,55,0.3);
-  box-shadow: 0 3px 8px rgba(11,37,69,0.08);
-  transition: box-shadow 0.3s ease;
-}
-img:hover {
-  box-shadow: 0 4px 12px rgba(11,37,69,0.15);
-}
-
-/* ===== 🌙 Night Mode (Auto-detect) ===== */
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #0b1f35;
-    color: #eaeaea;
-  }
-
-  h1, h2, h3, h4, h5 {
-    color: #f8f8f8;
-    border-bottom: 1.5px solid rgba(212,175,55,0.5);
-  }
-
-  a {
-    color: #d4af37;
-  }
-  a:hover {
-    color: #f0c85d;
-    text-shadow: 0 0 6px rgba(212,175,55,0.6);
-  }
-
-  .about-text {
-    background-color: rgba(255,255,255,0.05);
-    color: #f0f0f0;
-    box-shadow: 0 4px 12px rgba(212,175,55,0.1);
-  }
-
-  img {
-    border: 2px solid rgba(212,175,55,0.5);
-    box-shadow: 0 3px 8px rgba(212,175,55,0.15);
-  }
-
-  .site-footer {
-    color: #ccc;
-  }
+  border-top: 1px solid #eee;
 }
 </style>
