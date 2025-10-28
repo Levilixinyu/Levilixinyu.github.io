@@ -44,14 +44,14 @@ My current research focuses on two components:
 .timeline-item {
   margin-bottom: 1.2rem;
   transition: all 0.25s ease-in-out;
-  font-size: 0.85rem; /
+  font-size: 0.80rem; /
   line-height: 1.6;
   color: #222;
 }
 
 
 .timeline-item strong {
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: #d4af37;
   transition: all 0.25s ease-in-out;
 }
@@ -67,7 +67,7 @@ My current research focuses on two components:
 
 
 .timeline-item span {
-  font-size: 0.88rem;
+  font-size: 0.83rem;
   color: #0b2545;
   font-weight: 400;
 }
@@ -77,13 +77,14 @@ My current research focuses on two components:
 
   <p class="timeline-item">
     <strong>2023 – Present</strong><br>
-    <span>Ph.D. Candidate, Neuromuscular Physiology Research Lab, UT-Austin</span><br>
+    <span>Ph.D. Candidate, Neuromuscular Physiology Lab, UT-Austin</span><br>
     Studying how NMES modulates neuromuscular control in individuals with rotator cuff disease.
   </p>
   
   <p class="timeline-item">
     <strong>2024 – Present</strong><br>
-    <span>Graduate Teaching Assistant, Applied Human Anatomy and Neuromuscular Control</span><br>
+    <span>Graduate Teaching Assistant, UT-Austin</span><br>
+    KIN 424K Applied Human Anatomy, KIN 336 Neuromuscular Control</span><br>
   </p>
 
   <p class="timeline-item">
@@ -93,7 +94,7 @@ My current research focuses on two components:
 
   <p class="timeline-item">
     <strong>2020 – 2022</strong><br>
-    <span>M.S. in Kinesiology, Behavioral Biomechanics Lab, University of Michigan - Ann Arbor</span><br>
+    <span>M.S. in Kinesiology, Behavioral Biomechanics Lab, University of Michigan-Ann Arbor</span><br>
     Investigated the longitudinal stability of gait behavior in individuals with bipolar disorder using Vicon motion capture and EMG analysis.
   </p>
 
