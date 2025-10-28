@@ -1,17 +1,67 @@
-{% include base_path %}
+<!-- ======================================== -->
+<!-- Custom Fonts & Styles for Xinyu Li's Site -->
+<!-- ======================================== -->
 
-<!-- start custom head snippets -->
+<!-- Import Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 
-<!-- Support for Academicons -->
-<link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+<style>
+/* ===== Global Typography ===== */
+body {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #1e1e1e;
+  background-color: #ffffff;
+}
 
-<!-- favicon from https://commons.wikimedia.org/wiki/File:OOjs_UI_icon_academic-progressive.svg -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
-<link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-192x192.png" sizes="192x192"/>
-<link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
-<link rel="icon" href="/images/favicon.ico"/>
-<meta name="theme-color" content="#ffffff"/>
+/* Headings */
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-weight: 600;
+  color: #0b2545; /* 深蓝主色 */
+  letter-spacing: 0.5px;
+}
 
-<!-- end custom head snippets -->
+/* Links */
+a {
+  color: #d4af37; /* 金色强调 */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #b38e2e;
+  text-decoration: underline;
+}
+
+/* About page text block */
+.about-text {
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+  max-width: 750px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Navigation bar */
+.nav__items a {
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+/* Footer */
+.site-footer {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Optional: Soften horizontal lines */
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+}
+</style>
