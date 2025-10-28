@@ -29,7 +29,7 @@ My current research focuses on two components:
 
 ---
 
-### 🧭 Research Timeline
+### 🧭 Timeline
 
 <style>
 .timeline-container {
@@ -40,10 +40,23 @@ My current research focuses on two components:
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(11,37,69,0.08);
 }
+
 .timeline-item {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  transition: all 0.25s ease-in-out;
+  font-size: 0.9rem; /
+  line-height: 1.6;
+  color: #222;
+}
+
+
+.timeline-item strong {
+  font-size: 1.05rem;
+  color: #d4af37;
   transition: all 0.25s ease-in-out;
 }
+
+
 .timeline-item:hover strong {
   color: #f0c85d;
   text-shadow: 0 0 6px rgba(212,175,55,0.7);
@@ -51,36 +64,43 @@ My current research focuses on two components:
 .timeline-item:hover {
   transform: translateX(4px);
 }
+
+
+.timeline-item span {
+  font-size: 0.95rem;
+  color: #0b2545;
+  font-weight: 500;
+}
 </style>
 
 <div class="timeline-container">
 
   <p class="timeline-item">
-    <strong style="color:#d4af37;">2025 – Present</strong><br>
-    <span style="color:#0b2545;">Ph.D. Candidate, Neuromuscular Physiology Research Lab, University of Texas at Austin</span><br>
-    Leading the project on how NMES modulates neuromuscular control patterns across the rotator cuff and deltoid muscles in individuals with rotator cuff disease.
+    <strong>2023 – Present</strong><br>
+    <span>Ph.D. Candidate, Neuromuscular Physiology Research Lab, UT-Austin</span><br>
+    Studying how NMES modulates neuromuscular control in individuals with rotator cuff disease.
+  </p>
+  
+  <p class="timeline-item">
+    <strong>2024 – Present</strong><br>
+    <span>Graduate Teaching Assistant, Applied Human Anatomy and Neuromuscular Control</span><br>
   </p>
 
   <p class="timeline-item">
-    <strong style="color:#d4af37;">2024 – Present</strong><br>
-    <span style="color:#0b2545;">Graduate Teaching Assistant, Applied Human Anatomy</span><br>
+    <strong>2023</strong><br>
+    <span>Medical Affair Intern, Antibiotic Team, Pfizer Inc.</span><br>
   </p>
 
   <p class="timeline-item">
-    <strong style="color:#d4af37;">Mar – Jul 2023</strong><br>
-    <span style="color:#0b2545;">Medical Affair Intern, Antibiotic Team, Pfizer Inc. </span><br>
+    <strong>2020 – 2022</strong><br>
+    <span>M.S. in Kinesiology, Behavioral Biomechanics Lab, University of Michigan - Ann Arbor</span><br>
+    Investigated the longitudinal stability of gait behavior in individuals with <strong>bipolar disorder</strong> using Vicon motion capture and EMG analysis.
   </p>
 
   <p class="timeline-item">
-    <strong style="color:#d4af37;">2021 – 2022</strong><br>
-    <span style="color:#0b2545;"> M.S. in Kinesiology, Behavioral Biomechanics Lab, University of Michigan - Ann Arbor</span><br>
-    Investigated the longitudinal stability of gait behavior in individuals with bipolar disorder using Vicon motion capture, force plates, and EMG analysis.
-  </p>
-
-  <p class="timeline-item">
-    <strong style="color:#d4af37;">2019 – 2020</strong><br>
-    <span style="color:#0b2545;"> B.S. in Sports Medicine and Rehabilitation, Beijing Sport University </span><br>
-    Developed a clinical pilot study using functional electrical stimulation (FES) to enhance early-stage upper limb function recovery after stroke.
+    <strong>2016 – 2020</strong><br>
+    <span>B.S. in Sports Medicine, Beijing Sport University</span><br>
+    Developed a pilot study using NMES to improve early-stage upper limb function after stroke.
   </p>
 
 </div>
