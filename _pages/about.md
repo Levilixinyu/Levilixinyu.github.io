@@ -11,7 +11,7 @@ author_profile: true
 
 ### Hi there, I’m **Xinyu Li (李心钰)**
 
-I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by Dr. Lisa Griffin (https://sites.edb.utexas.edu/nmus/).  
+I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by [Dr. Lisa Griffin](https://sites.edb.utexas.edu/nmus/).  
 
 My current research focuses on two components:
 1) how neuromuscular control adapts under various loading conditions, fatigue, and pain;
@@ -34,3 +34,12 @@ My current research focuses on two components:
 - ✉️ [xinyul@utexas.edu](mailto:xinyul@utexas.edu)  
 - 🔗 [LinkedIn](https://linkedin.com/in/xinyul2624)
 - 📑 [ResearchGate](https://www.researchgate.net/profile/Xinyu-Li-196)
+
+
+---
+
+<p style="text-align:center; font-size:14px; color:#555; margin-top:1.5rem;">
+Thanks for visiting my page — I hope you find something inspiring here. 🌿
+</p>
+
+</div>
