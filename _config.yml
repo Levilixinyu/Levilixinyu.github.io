@@ -27,7 +27,7 @@ author:
   researchgate     : "https://www.researchgate.net/profile/Xinyu-Li-196"
  
 # Appearance
-theme_skin: "contrast"
+theme_skin: "default"
 primary_color: "#0b2545"     # 深蓝主色
 accent_color: "#d4af37"      # 金色点缀
 background_color: "#f9f9f9"  # 浅底衬托蓝金对比
