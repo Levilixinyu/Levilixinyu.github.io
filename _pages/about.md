@@ -6,8 +6,8 @@ author_profile: true
 ---
 <style>
 .page__content {
-  background-color: #f9fafc;     /* 柔和浅蓝灰底 */
-  color: #0b2545;                /* 主体文字深蓝 */
+  background-color: #f9fafc;    
+  color: #0b2545;               
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   padding: 2rem;
   border-radius: 16px;
@@ -18,7 +18,7 @@ author_profile: true
 .page__content h2,
 .page__content h3 {
   color: #0b2545;                      
-  border-bottom: none;                 
+  border-bottom: 2px solid rgba(212,175,55,0.35);                 
   margin-top: 2rem;
   font-weight: 600;
   background-color: rgba(11,37,69,0.04); 
@@ -76,7 +76,6 @@ My current research focuses on two components:
 
 🐈 Cat person, 100%.
 
----
 
 ### 🧠 Research Interests
 - EMG–EMG coherence and its corticospinal contributions
@@ -84,7 +83,6 @@ My current research focuses on two components:
 - Functional electrical stimulation and wearable technology  
 - Gait analysis in individuals with neurological disorders 
 
----
 
 ### 🧭 Timeline
 
