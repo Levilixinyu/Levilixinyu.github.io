@@ -64,16 +64,21 @@ author_profile: true
 /* 🌙 夜间模式自动切换 */
 @media (prefers-color-scheme: dark) {
   .page__content {
-    background-color: #0b2545;   /* 深蓝背景 */
-    color: #f1f1f1;              /* 淡金/白文字 */
+    background-color: #0b1f35;   /* 深蓝背景 */
+    color: #eaeaea;              /* 柔和白文字 */
     box-shadow: 0 4px 12px rgba(212,175,55,0.15);
   }
 
-  .page__content h3, 
-  .page__content a {
-    color: #d4af37;              /* 金色强调 */
+  .page__content h1,
+  .page__content h2,
+  .page__content h3 {
+    color: #f5f5f5;
+    border-bottom: 1.5px solid rgba(212,175,55,0.5);
   }
 
+  .page__content a {
+    color: #d4af37;
+  }
   .page__content a:hover {
     color: #f0c85d;
     text-shadow: 0 0 6px rgba(212,175,55,0.6);
@@ -82,6 +87,11 @@ author_profile: true
   .timeline-container {
     background: rgba(255,255,255,0.05);
     border-left: 3px solid #d4af37;
+    box-shadow: 0 2px 6px rgba(212,175,55,0.08);
+  }
+
+  .timeline-item span {
+    color: #f5f5f5;
   }
 }
 </style>
