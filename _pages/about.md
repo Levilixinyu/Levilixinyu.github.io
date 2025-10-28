@@ -4,7 +4,61 @@ title: "About Me"
 permalink: /
 author_profile: true
 ---
+<style>
+.page__content {
+  background-color: #f9fafc;     /* 柔和浅蓝灰底 */
+  color: #0b2545;                /* 主体文字深蓝 */
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(11,37,69,0.08);
+}
 
+.page__content h1,
+.page__content h2,
+.page__content h3 {
+  color: #0b2545;
+  border-bottom: 2px solid rgba(212,175,55,0.35);
+  padding-bottom: 0.3rem;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.page__content a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+.page__content a:hover {
+  color: #f0c85d;
+  text-shadow: 0 0 6px rgba(212,175,55,0.6);
+}
+
+.page__content hr {
+  border: none;
+  border-top: 1.5px solid rgba(11,37,69,0.15);
+  margin: 1.5rem 0;
+}
+
+.page__content img {
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(11,37,69,0.1);
+  border: 2px solid rgba(212,175,55,0.4);
+  margin: 1rem 0;
+}
+
+.page__content ul {
+  margin-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.page__content p:last-child {
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
+}
+</style>
 <div class="about-text">
 
 ### Hi there, I’m **Xinyu Li (李心钰)**
