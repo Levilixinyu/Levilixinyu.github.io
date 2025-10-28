@@ -24,7 +24,7 @@ My current research focuses on two components:
 ### 🧠 Research Interests
 - EMG–EMG coherence and its corticospinal contributions
 - Algorithmic methods for motor unit decomposition
-- Functional electrical stimulation and wearable rehabilitation technology  
+- Functional electrical stimulation and wearable technology  
 - Gait analysis in individuals with neurological disorders 
 
 ---
