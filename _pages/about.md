@@ -44,7 +44,7 @@ My current research focuses on two components:
 .timeline-item {
   margin-bottom: 1.2rem;
   transition: all 0.25s ease-in-out;
-  font-size: 0.75rem; /
+  font-size: 0.7rem; /
   line-height: 1.6;
   color: #222;
 }
@@ -67,7 +67,7 @@ My current research focuses on two components:
 
 
 .timeline-item span {
-  font-size: 0.8rem;
+  font-size: 0.83rem;
   color: #0b2545;
   font-weight: 400;
 }
