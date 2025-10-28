@@ -44,14 +44,14 @@ My current research focuses on two components:
 .timeline-item {
   margin-bottom: 1.2rem;
   transition: all 0.25s ease-in-out;
-  font-size: 0.9rem; /
+  font-size: 0.85rem; /
   line-height: 1.6;
   color: #222;
 }
 
 
 .timeline-item strong {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #d4af37;
   transition: all 0.25s ease-in-out;
 }
@@ -67,9 +67,9 @@ My current research focuses on two components:
 
 
 .timeline-item span {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: #0b2545;
-  font-weight: 500;
+  font-weight: 400;
 }
 </style>
 
@@ -94,7 +94,7 @@ My current research focuses on two components:
   <p class="timeline-item">
     <strong>2020 – 2022</strong><br>
     <span>M.S. in Kinesiology, Behavioral Biomechanics Lab, University of Michigan - Ann Arbor</span><br>
-    Investigated the longitudinal stability of gait behavior in individuals with <strong>bipolar disorder</strong> using Vicon motion capture and EMG analysis.
+    Investigated the longitudinal stability of gait behavior in individuals with bipolar disorder using Vicon motion capture and EMG analysis.
   </p>
 
   <p class="timeline-item">
