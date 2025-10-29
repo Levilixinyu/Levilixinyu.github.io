@@ -70,16 +70,12 @@ author_profile: true
 
 <div class="research-card">
   <h3>EMG-EMG Coherence and Electrical Stimulation</h3>
-  <p>Neuromuscular Electrical Stimulation (NMES) is a well-established rehabilitation tool known for enhancing muscle activation and promoting motor recovery. It can induce plastic changes in motor pathways, particularly within the motor cortex and corticospinal tract. By stimulating sensory pathways, NMES provides proprioceptive feedback that influences motor control programming in the central nervous system. Electromyographic (EMG) - EMG coherence is a valuable tool for assessing the frequency domain similarity of neural inputs to functionally related muscles, providing insights into shared neural drive between motor neuron pools. Investigating these effects at multiple conditions is critical for tailoring NMES-based rehabilitation protocols that align with the functional capabilities and recovery goals of individuals with neurological disorders. <img width="468" height="38" alt="image" src="https://github.com/user-attachments/assets/ff5273e2-9787-4042-81c1-3a93a18975a2" />
-<img width="468" height="38" alt="image" src="https://github.com/user-attachments/assets/33b1e342-1c4c-4424-9ce6-3b8f2dcfa1b9" />
-<img width="468" height="114" alt="image" src="https://github.com/user-attachments/assets/7960c29b-a7fb-439c-87ef-3ec9a2a7bf01" />
-</p>
+  <p>Neuromuscular Electrical Stimulation (NMES) is a well-established rehabilitation tool known for enhancing muscle activation and promoting motor recovery. It can induce plastic changes in motor pathways, particularly within the motor cortex and corticospinal tract. By stimulating sensory pathways, NMES provides proprioceptive feedback that influences motor control programming in the central nervous system. Electromyographic (EMG) - EMG coherence is a valuable tool for assessing the frequency domain similarity of neural inputs to functionally related muscles, providing insights into shared neural drive between motor neuron pools. Investigating these effects at multiple conditions is critical for tailoring NMES-based rehabilitation protocols that align with the functional capabilities and recovery goals of individuals with neurological disorders.</p>
 </div>
 
 <div class="research-card">
   <h3>Motor Unit Analysis</h3>
-  <p>Efficient motor unit firing rate and recruitment threshold are essential for restoring functional movement in individuals with RCD. In healthy individuals, fast-twitch motor units are recruited at higher force levels following Henneman’s size principle, while in those with neuromuscular impairments, these units may exhibit delayed or inefficient activation. Our study will determine whether NMES alters motor unit firing patterns during slow ramp contractions. <img width="468" height="114" alt="image" src="https://github.com/user-attachments/assets/53d05e7f-8f3f-4a0e-b0e9-a34811658ee5" />
-</p>
+  <p>Efficient motor unit firing rate and recruitment threshold are essential for restoring functional movement in individuals with RCD. In healthy individuals, fast-twitch motor units are recruited at higher force levels following Henneman’s size principle, while in those with neuromuscular impairments, these units may exhibit delayed or inefficient activation. Our study will determine whether NMES alters motor unit firing patterns during slow ramp contractions.</p>
 </div>
 
 <div class="research-card">
