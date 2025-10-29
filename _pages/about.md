@@ -66,7 +66,7 @@ author_profile: true
 
 ### Hi there, I’m **Xinyu Li (李心钰)!😊**
 
-I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by [Dr. Lisa Griffin][https://scholar.google.com/citations?hl=en&user=V3M92AQAAAAJ&view_op=list_works&sortby=pubdate].  
+I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by [Dr. Lisa Griffin](https://scholar.google.com/citations?hl=en&user=V3M92AQAAAAJ&view_op=list_works&sortby=pubdate).  
 
 My current research focuses on two components:
 
