@@ -23,7 +23,7 @@ author_profile: true
 .page__content h2 {
   color: #0b2545;
   border-bottom: 1.5px solid rgba(212,175,55,0.4);
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: left;
   font-weight: 600;
@@ -44,12 +44,11 @@ author_profile: true
   color: #d4af37;
   font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 0.4rem; /* 🔹缩小标题与正文之间距离 */
+  margin-bottom: 0.4rem;
 }
 
 .research-card p {
   color: #0b2545;
-  font-family: "Helvetica Neue", "Roboto", sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.7;
@@ -70,23 +69,23 @@ author_profile: true
 ### 🔬 Current Research Projects
 
 <div class="research-card">
-  <h3>Neuromuscular Electrical Stimulation and EMG Coherence</h3>
-  <p>Exploring how neuromuscular electrical stimulation (NMES) modulates corticospinal drive and intermuscular EMG–EMG coherence in individuals with rotator cuff disease. Integrating advanced motor unit decomposition and coherence spectral analysis.</p>
+  <h3>EMG-EMG Coherence and Electrical Stimulation</h3>
+  <p>Neuromuscular Electrical Stimulation (NMES) is a well-established rehabilitation tool known for enhancing muscle activation and promoting motor recovery. It can induce plastic changes in motor pathways, particularly within the motor cortex and corticospinal tract. By stimulating sensory pathways, NMES provides proprioceptive feedback that influences motor control programming in the central nervous system. Electromyographic (EMG) - EMG coherence is a valuable tool for assessing the frequency domain similarity of neural inputs to functionally related muscles, providing insights into shared neural drive between motor neuron pools. Investigating these effects at multiple conditions is critical for tailoring NMES-based rehabilitation protocols that align with the functional capabilities and recovery goals of individuals with neurological disorders. <img width="468" height="38" alt="image" src="https://github.com/user-attachments/assets/ff5273e2-9787-4042-81c1-3a93a18975a2" />
+<img width="468" height="38" alt="image" src="https://github.com/user-attachments/assets/33b1e342-1c4c-4424-9ce6-3b8f2dcfa1b9" />
+<img width="468" height="114" alt="image" src="https://github.com/user-attachments/assets/7960c29b-a7fb-439c-87ef-3ec9a2a7bf01" />
+</p>
 </div>
 
 <div class="research-card">
-  <h3>Mechanisms of Motor Unit Coordination</h3>
-  <p>Studying how motor unit synchronization, recruitment, and firing rate adapt under fatigue and pain conditions, revealing the cooperative dynamics between cortical and spinal motor control.</p>
+  <h3>Motor Unit Analysis</h3>
+  <p>Efficient motor unit firing rate and recruitment threshold are essential for restoring functional movement in individuals with RCD. In healthy individuals, fast-twitch motor units are recruited at higher force levels following Henneman’s size principle, while in those with neuromuscular impairments, these units may exhibit delayed or inefficient activation. Our study will determine whether NMES alters motor unit firing patterns during slow ramp contractions. <img width="468" height="114" alt="image" src="https://github.com/user-attachments/assets/53d05e7f-8f3f-4a0e-b0e9-a34811658ee5" />
+</p>
 </div>
 
 <div class="research-card">
   <h3>Gait Analysis in Neuropsychiatric Populations</h3>
-  <p>Examining gait stability and interlimb coordination in individuals with bipolar disorder using 3D motion capture and EMG analysis to understand sensorimotor integration and cognitive-motor coupling.</p>
+  <p>We investigated gait stability, joint kinematics, and interlimb coordination in individuals with bipolar disorder using 3D motion capture (Vicon) and force plate to understand sensorimotor integration and cognitive-motor coupling.</p>
 </div>
 
-<div class="research-card">
-  <h3>Wearable NMES Technology for Rehabilitation</h3>
-  <p>Developing NMES-based wearable systems with adaptive real-time feedback control to enhance muscle activation, restore function, and support motor recovery in older adults and clinical populations.</p>
-</div>
 
 </div>
