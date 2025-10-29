@@ -14,7 +14,7 @@ author_profile: true
   font-weight: 400;
   font-size: 15px;
   line-height: 1.7;
-  padding: 0.5rem 1rem; /* 🔹缩小内边距 */
+  padding: 0.5rem 1rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
 }
@@ -36,8 +36,8 @@ author_profile: true
   background-color: #f9fafc;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(11,37,69,0.1);
-  padding: 1rem 1.2rem; /* 🔹更紧凑的卡片内边距 */
-  margin-bottom: 0.8rem; /* 🔹减少卡片间距 */
+  padding: 1rem 1.2rem; 
+  margin-bottom: 0.8rem; 
 }
 
 .research-card h3 {
@@ -53,7 +53,7 @@ author_profile: true
   font-size: 15px;
   line-height: 1.7;
   letter-spacing: 0;
-  margin: 0; /* 🔹去掉多余段落间距 */
+  margin: 0; 
 }
 
 /* List spacing */
@@ -75,7 +75,7 @@ author_profile: true
 
 <div class="research-card">
   <h3>Motor Unit Analysis</h3>
-  <p>Efficient motor unit firing rate and recruitment threshold are essential for restoring functional movement in individuals with RCD. In healthy individuals, fast-twitch motor units are recruited at higher force levels following Henneman’s size principle, while in those with neuromuscular impairments, these units may exhibit delayed or inefficient activation. Our study will determine whether NMES alters motor unit firing patterns during slow ramp contractions.</p>
+  <p>A motor unit is the functional unit of skeletal muscle, consisting of a single motor neuron and all the muscle fibers it controls. When the motor neuron fires, all the muscle fibers within that unit contract together to initiate movement. Efficient motor unit firing rate and recruitment threshold are essential for restoring functional movement. In healthy individuals, fast-twitch motor units are recruited at higher force levels following Henneman’s size principle, while in those with neuromuscular impairments, these units may exhibit delayed or inefficient activation. Our study will determine whether NMES alters motor unit firing patterns during slow ramp contractions using a series of motor unit decomposition methods.</p>
 </div>
 
 <div class="research-card">
