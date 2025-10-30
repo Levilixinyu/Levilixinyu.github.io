@@ -1,8 +1,3 @@
-kramdown:
-  input: GFM
-  hard_wrap: false
-  parse_block_html: true
-
 # Basic Site Settings
 baseurl: ""  # keep blank for user.github.io sites
 locale                   : "en-US"
