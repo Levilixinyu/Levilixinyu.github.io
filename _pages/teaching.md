@@ -121,15 +121,16 @@ author_profile: true
   <h3>Tools</h3>
   <div class="tool-images">
     <div class="tool-item">
-      <img src="/images/visiblebody.jpg" alt="Visible Body Courseware">
+      <img src="{{ '/images/visiblebody.jpg' | relative_url }}" alt="Visible Body Courseware">
       <p>Visible Body</p>
-      <img src="/images/C4.jpg" alt="C4">
+      <img src="{{ '/images/C4.jpg' | relative_url }}" alt="C4">
       <p>C4's Smile</p>
     </div>
     <div class="tool-item">
-      <img src="/images/musclepuzzle.jpg" alt="Muscle Puzzles">
-      <img src="/images/musclepuzzlehead.jpg" alt="Muscle Puzzles">
+      <img src="{{ '/images/musclepuzzle.jpg' | relative_url }}" alt="Muscle Puzzles">
+      <img src="{{ '/images/musclepuzzlehead.jpg' | relative_url }}" alt="Muscle Puzzles">
       <p>Muscle Puzzle Model</p>
     </div>
   </div>
 </div>
+
