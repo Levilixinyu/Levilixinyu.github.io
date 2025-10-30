@@ -87,8 +87,8 @@ author_profile: true
 }
 
 .tool-item img {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: 12px;
   object-fit: cover;
   box-shadow: 0 3px 8px rgba(11,37,69,0.1);
@@ -121,15 +121,15 @@ author_profile: true
   <h3>Tools</h3>
   <div class="tool-images">
     <div class="tool-item">
-      <img src="/assets/images/visiblebody.jpg" alt="Visible Body Courseware">
+      <img src="/images/visiblebody.jpg" alt="Visible Body Courseware">
       <p>Visible Body</p>
-      <img src="/assets/images/C4.jpg" alt="C4">
+      <img src="/images/C4.jpg" alt="C4">
       <p>C4's Smile</p>
     </div>
     <div class="tool-item">
-      <img src="/assets/images/musclepuzzle.jpg" alt="Muscle Puzzles">
-      <img src="/assets/images/musclepuzzlehead.jpg" alt="Muscle Puzzles">
-      <p>Muscle Puzzles</p>
+      <img src="/images/musclepuzzle.jpg" alt="Muscle Puzzles">
+      <img src="/images/musclepuzzlehead.jpg" alt="Muscle Puzzles">
+      <p>Muscle Puzzle Model</p>
     </div>
   </div>
 </div>
