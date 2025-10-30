@@ -57,7 +57,7 @@ author_profile: true
   margin: 0;
 }
 
-/* Gallery style (no card) */
+/* Gallery style */
 .gallery-row {
   display: flex;
   flex-wrap: wrap;
@@ -72,6 +72,8 @@ author_profile: true
 
 .gallery-item img {
   width: 180px;
+  height: 180px;
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 3px 8px rgba(11,37,69,0.12);
   transition: transform 0.2s ease;
@@ -89,7 +91,7 @@ author_profile: true
 }
 </style>
 
-## Current And Past Appointment
+## Current and Past Appointment
 
 <div class="teaching-card">
   <h3>Graduate Teaching Assistant — UT-Austin (2024 – Present)</h3>
@@ -99,23 +101,25 @@ author_profile: true
   Summer 2025</p>
 </div>
 
-<h2>Teaching Tools</h2>
+<h2 style="text-align:center; font-weight:600; color:#0b2545; margin-top:2rem;">
+  Teaching Tools
+</h2>
 
 <div class="gallery-row">
   <div class="gallery-item">
-    <img src="{{ '/images/visiblebody.jpg' | absolute_url }}" alt="Visible Body">
+    <img src="https://levilixinyu.github.io/images/visiblebody.jpg" alt="Visible Body">
     <p>Visible Body</p>
   </div>
   <div class="gallery-item">
-    <img src="{{ '/images/C4.jpg' | absolute_url }}" alt="C4">
+    <img src="https://levilixinyu.github.io/images/C4.jpg" alt="C4">
     <p>C4’s Smile</p>
   </div>
   <div class="gallery-item">
-    <img src="{{ '/images/musclepuzzle.jpg' | absolute_url }}" alt="Muscle Puzzle">
+    <img src="https://levilixinyu.github.io/images/musclepuzzle.jpg" alt="Muscle Puzzle">
     <p>Muscle Puzzle</p>
   </div>
   <div class="gallery-item">
-    <img src="{{ '/images/musclepuzzlehead.jpg' | absolute_url }}" alt="Muscle Puzzle Head">
+    <img src="https://levilixinyu.github.io/images/musclepuzzlehead.jpg" alt="Muscle Puzzle Head">
     <p>Muscle Puzzle Model</p>
   </div>
 </div>
