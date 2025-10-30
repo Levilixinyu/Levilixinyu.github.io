@@ -36,25 +36,10 @@ author_profile: true
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: block;
   text-align: left;
-  gap: 1.2rem;
 }
 .presentation-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 6px 14px rgba(11,37,69,0.15);
-}
-
-/* Image styling */
-.presentation-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-/* Content beside image */
-.presentation-info {
-  flex: 1;
 }
 
 /* Title link */
@@ -81,51 +66,36 @@ author_profile: true
 ## Conference Presentations
 
 <div class="presentation-card">
-  <div class="presentation-info">
-    <a href="https://doi.org/10.1249/01.mss.0001156100.15489.57" target="_blank">
-      Effects Of NMES On EMG-EMG Coherence Across Glenohumeral Muscles During Fatigue In Rotator Cuff Disease
-    </a>
-    <p><strong>Li, X.</strong>, Zhu, H., Fan, Z., & Griffin, L. (2025). American College of Sports Medicine Annual Meeting, Atlanta, GA.</p>
+  <a href="https://doi.org/10.1249/01.mss.0001156100.15489.57" target="_blank">
+    Effects Of NMES On EMG-EMG Coherence Across Glenohumeral Muscles During Fatigue In Rotator Cuff Disease
+  </a>
+  <p><strong>Li, X.</strong>, Zhu, H., Fan, Z., & Griffin, L. (2025). American College of Sports Medicine Annual Meeting, Atlanta, GA.</p>
 
-    <a href="https://doi.org/10.1249/01.mss.0001156104.27965.e6" target="_blank">
-      Low EMG-EMG Coherence Across Shoulder Muscles During Fatigue Correlates With Pain In Rotator Cuff Disease
-    </a>
-    <p>Luo, Z., <strong>Li, X.</strong>, Zhu, H., Yu, X., & Griffin, L. (2025). American College of Sports Medicine Annual Meeting, Atlanta, GA.</p>
-  </div>
-  
-  <img src="/assets/images/acsm2025a.jpg" alt="ACSM 2025 Presentation 1">
+  <a href="https://doi.org/10.1249/01.mss.0001156104.27965.e6" target="_blank">
+    Low EMG-EMG Coherence Across Shoulder Muscles During Fatigue Correlates With Pain In Rotator Cuff Disease
+  </a>
+  <p>Luo, Z., <strong>Li, X.</strong>, Zhu, H., Yu, X., & Griffin, L. (2025). American College of Sports Medicine Annual Meeting, Atlanta, GA.</p>
 </div>
 
 <div class="presentation-card">
-  <div class="presentation-info">
-    <a href="https://www.researchgate.net/publication/383877347_The_Effects_of_Neuromuscular_Electrical_Stimulation_on_Intermuscular_EMG_Coherence_across_Rotator_Cuff_Muscles_and_Deltoid_during_Various_Force_Level_Contractions_in_People_with_Rotator_Cuff_Disease" target="_blank">
-      Effects of Neuromuscular Electrical Stimulation on Intermuscular EMG Coherence across Rotator Cuff and Deltoid Muscles in People with Rotator Cuff Disease
-    </a>
-    <p><strong>Li, X.</strong>, Zhu, H, & Griffin, L. (2024). Society for Neuroscience Annual Meeting, Chicago, IL.</p>
-  </div>
-  
-  <img src="/assets/images/sfn2024.jpg" alt="SfN 2024 Presentation">
+  <a href="https://www.researchgate.net/publication/383877347_The_Effects_of_Neuromuscular_Electrical_Stimulation_on_Intermuscular_EMG_Coherence_across_Rotator_Cuff_Muscles_and_Deltoid_during_Various_Force_Level_Contractions_in_People_with_Rotator_Cuff_Disease" target="_blank">
+    Effects of Neuromuscular Electrical Stimulation on Intermuscular EMG Coherence across Rotator Cuff and Deltoid Muscles in People with Rotator Cuff Disease
+  </a>
+  <p><strong>Li, X.</strong>, Zhu, H, & Griffin, L. (2024). Society for Neuroscience Annual Meeting, Chicago, IL.</p>
 </div>
 
 <div class="presentation-card">
-  <div class="presentation-info">
-    <a href="https://doi.org/10.1249/01.mss.0001058344.48031.b4" target="_blank">
-      EMG Coherence Across Shoulder Muscles During Fatigue In Older Adults With Rotator Cuff Disease
-    </a>
-    <p><strong>Li, X.</strong>, Zhu, H., & Griffin, L. (2024). American College of Sports Medicine Annual Meeting, Boston, MA.</p>
-  </div>
-  
-  <img src="/assets/images/acsm2024.jpg" alt="ACSM 2024 Presentation">
+  <a href="https://doi.org/10.1249/01.mss.0001058344.48031.b4" target="_blank">
+    EMG Coherence Across Shoulder Muscles During Fatigue In Older Adults With Rotator Cuff Disease
+  </a>
+  <p><strong>Li, X.</strong>, Zhu, H., & Griffin, L. (2024). American College of Sports Medicine Annual Meeting, Boston, MA.</p>
 </div>
 
 <div class="presentation-card">
-  <div class="presentation-info">
-    <a href="https://www.researchgate.net/publication/383877480_LONGITUDINAL_STABILITY_OF_GAIT_BEHAVIOR_WITHIN_AND_BETWEEN_MOOD_PHASES_IN_INDIVIDUALS_WITH_BIPOLAR_DISORDER" target="_blank">
-      Longitudinal Stability of Gait Behavior Within and Between Mood Phases in Individuals With Bipolar Disorder
-    </a>
-    <p>Gross, M., Kang, G., <strong>Li, X.</strong> (2022). North American Congress of Biomechanics, Ottawa, Canada.</p>
-  </div>
-
-  <img src="/assets/images/acb2022.jpg" alt="NACOB 2022 Presentation">
+  <a href="https://www.researchgate.net/publication/383877480_LONGITUDINAL_STABILITY_OF_GAIT_BEHAVIOR_WITHIN_AND_BETWEEN_MOOD_PHASES_IN_INDIVIDUALS_WITH_BIPOLAR_DISORDER" target="_blank">
+    Longitudinal Stability of Gait Behavior Within and Between Mood Phases in Individuals With Bipolar Disorder
+  </a>
+  <p>Gross, M., Kang, G., <strong>Li, X.</strong> (2022). North American Congress of Biomechanics, Ottawa, Canada.</p>
 </div>
+
 
