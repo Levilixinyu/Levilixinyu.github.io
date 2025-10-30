@@ -28,7 +28,7 @@ author_profile: true
   text-align: left;
   font-weight: 600;
   padding-bottom: 0.25rem;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
 }
 
 /* Research cards */
@@ -43,7 +43,7 @@ author_profile: true
 
 .research-card h3 {
   color: #d4af37;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   margin-bottom: 0.4rem;
 }
@@ -52,6 +52,7 @@ author_profile: true
   color: #0b2545;
   font-size: 0.8rem;
   font-family: "Helvetica Neue", "Roboto", sans-serif;
+  font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0;
   margin: 0; 
