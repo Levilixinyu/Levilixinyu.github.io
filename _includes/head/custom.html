@@ -7,6 +7,33 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 <style>
+:root[data-theme="light"] .masthead,
+:root[data-theme="light"] .site-nav {
+  background-color: #EEE0E5 !important;  /* 你的奶粉色主题 */
+}
+
+:root[data-theme="light"] .site-nav a {
+  color: #0b2545 !important; /* 深蓝字 */
+}
+
+:root[data-theme="light"] .site-nav a:hover {
+  color: #d4af37 !important; /* 金色 hover */
+}
+
+
+/* ===== Dark Mode (夜间模式) ===== */
+:root[data-theme="dark"] .masthead,
+:root[data-theme="dark"] .site-nav {
+  background-color: #0b2545 !important; /* 深蓝背景 */
+}
+
+:root[data-theme="dark"] .site-nav a {
+  color: #f9f9f9 !important; /* 奶白文字 */
+}
+
+:root[data-theme="dark"] .site-nav a:hover {
+  color: #d4af37 !important; /* 金色 hover */
+}
 
 /* ===== Global Typography ===== */
 body {
@@ -25,10 +52,6 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
   color: #0b2545; /* 深蓝主色 */
   letter-spacing: 0.5px;
-}
-
-.masthead, .site-nav {
-  background-color: #7A6E6A;
 }
 
 /* Links */
