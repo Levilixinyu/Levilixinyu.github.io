@@ -23,7 +23,7 @@ author_profile: true
   text-align: left;
   font-weight: 600;
   padding-bottom: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Presentation cards */
@@ -63,7 +63,7 @@ author_profile: true
 }
 </style>
 
-## Conference Presentations
+## Conferences
 
 <div class="presentation-card">
   <a href="https://doi.org/10.1249/01.mss.0001156100.15489.57" target="_blank">
