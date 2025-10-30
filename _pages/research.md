@@ -59,7 +59,7 @@ author_profile: true
 /* Card paragraph */
 .research-card p {
   color: #0b2545;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   font-weight: 400;
   line-height: 1.6;
