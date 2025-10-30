@@ -49,8 +49,7 @@ author_profile: true
 
 .research-card p {
   color: #0b2545;
-  font-weight: 400;
-  font-size: 15px;
+  font-size: 0.8rem;
   line-height: 1.7;
   letter-spacing: 0;
   margin: 0; 
