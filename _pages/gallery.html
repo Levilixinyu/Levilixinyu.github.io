@@ -15,7 +15,6 @@ author_profile: true
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
 }
 
-/* Section title */
 .gallery-section h2 {
   color: #0b2545;
   border-bottom: 2px solid rgba(212,175,55,0.4);
@@ -25,7 +24,7 @@ author_profile: true
   font-size: 1.3rem;
 }
 
-/* Carousel container */
+/* Carousel */
 .carousel {
   position: relative;
   width: 90%;
@@ -33,23 +32,22 @@ author_profile: true
   margin: 1.5rem auto 3rem auto;
   overflow: hidden;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(11,37,69,0.15);
 }
 
-/* Image track */
 .carousel-track {
   display: flex;
   transition: transform 0.6s ease-in-out;
 }
 
-/* Individual images */
 .carousel img {
   width: 100%;
   flex-shrink: 0;
+  object-fit: cover;
+  height: 500px;
+  cursor: zoom-in;
   border-radius: 16px;
 }
 
-/* Navigation arrows */
 .carousel button {
   position: absolute;
   top: 50%;
@@ -62,38 +60,64 @@ author_profile: true
   font-size: 1.5rem;
   color: #0b2545;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.carousel button:hover {
-  background-color: rgba(212,175,55,0.8);
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
+
+/* -------- Lightbox -------- */
+#lightbox-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
   color: white;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-.carousel .prev {
-  left: 10px;
+#lightbox-prev, #lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.3);
+  border: none;
+  color: white;
+  font-size: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.carousel .next {
-  right: 10px;
+#lightbox-prev:hover, #lightbox-next:hover {
+  background: rgba(255,255,255,0.8);
+  color: #0b2545;
 }
 
-.carousel,
-.carousel * {
-  box-shadow: none !important;
-  background: none !important;
-  border: none !important;
-}
+#lightbox-prev { left: 20px; }
+#lightbox-next { right: 20px; }
 
-.carousel img {
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-.carousel img {
-  object-fit: cover;
-  height: 500px;
-}
 </style>
 
 <div class="gallery-section">
@@ -121,9 +145,7 @@ author_profile: true
   <div class="carousel" id="nature-carousel">
     <button class="prev">&#10094;</button>
     <div class="carousel-track">
-      <img src="/images/nature1.jpg" alt="Nature 1">
-      <img src="/images/nature2.jpg" alt="Nature 2">
-      <img src="/images/nature3.jpg" alt="Nature 3">
+
     </div>
     <button class="next">&#10095;</button>
   </div>
@@ -152,14 +174,46 @@ function createCarousel(carouselId) {
     updateCarousel();
   });
 
-  // 自动轮播（可选）
   setInterval(() => {
     index = (index + 1) % images.length;
     updateCarousel();
   }, 5000);
 }
 
-// 初始化两个轮播
 createCarousel("monet-carousel");
 createCarousel("nature-carousel");
+
+/* Lightbox */
+const overlay = document.createElement("div");
+overlay.id = "lightbox-overlay";
+overlay.innerHTML = `
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-image">
+  <button id="lightbox-prev">&#10094;</button>
+  <button id="lightbox-next">&#10095;</button>
+`;
+document.body.appendChild(overlay);
+
+const overlayImg = document.getElementById("lightbox-image");
+const closeBtn = document.getElementById("lightbox-close");
+const prevBtn = document.getElementById("lightbox-prev");
+const nextBtn = document.getElementById("lightbox-next");
+
+let allImgs = Array.from(document.querySelectorAll(".carousel-track img"));
+let current = 0;
+
+function openLightbox(i) {
+  current = i;
+  overlayImg.src = allImgs[i].src;
+  overlay.style.display = "flex";
+}
+
+allImgs.forEach((img, i) => {
+  img.addEventListener("click", () => openLightbox(i));
+});
+
+closeBtn.onclick = () => overlay.style.display = "none";
+prevBtn.onclick = () => openLightbox((current - 1 + allImgs.length) % allImgs.length);
+nextBtn.onclick = () => openLightbox((current + 1) % allImgs.length);
+document.addEventListener("keydown", e => e.key === "Escape" && (overlay.style.display = "none"));
 </script>
