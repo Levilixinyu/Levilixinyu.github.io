@@ -40,7 +40,7 @@ paginate: 5
 collections:
   research:
     output: true
-  publications:
+  presentations:
     output: true
   teaching:
     output: true
@@ -48,14 +48,6 @@ collections:
     output: true
   gallery: 
     output: true
-
-
-# Publication Category - The following the list of publication categories and their headings
-publication_category:
-  manuscripts:
-    title: 'Journal Articles'    
-  conferences:
-    title: 'Conference Papers'
 
 
 # Analytics
@@ -109,10 +101,10 @@ defaults:
       author_profile: true
       share: true
 
-  # Publications collection
+  # Presentation collection
   - scope:
       path: ""
-      type: publications
+      type: presentations
     values:
       layout: single
       author_profile: true
