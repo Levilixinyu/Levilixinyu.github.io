@@ -5,6 +5,7 @@ permalink: /teaching/
 author_profile: true
 ---
 
+{% raw %}
 <style>
 .page__content {
   background-color: #f9fafc;
@@ -133,4 +134,4 @@ author_profile: true
     </div>
   </div>
 </div>
-
+{% endraw %}
