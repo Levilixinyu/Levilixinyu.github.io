@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 <style>
-/* ========== Research Page Styling (Compact Version) ========== */
+/* ========== Research Page Styling (Match Presentation Style) ========== */
 .page__content {
   background-color: #f9fafc;
   color: #0b2545;
@@ -14,48 +14,56 @@ author_profile: true
   font-weight: 400;
   font-size: 15px;
   line-height: 1.7;
-  padding: 0.5rem 1rem;
+  padding: 1.2rem 1.5rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(11,37,69,0.12);
 }
 
-/* Section title */
+/* Section title — matches presentation */
 .page__content h2 {
   color: #0b2545;
-  border-bottom: 1.5px solid rgba(212,175,55,0.4);
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  border-bottom: 1.5px solid rgba(212,175,55,0.4); /* gold underline */
+  margin-top: 2rem;
   text-align: left;
   font-weight: 600;
   padding-bottom: 0.25rem;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
 }
 
 /* Research cards */
 .research-card {
-  background-color: #f9fafc;
-  border-radius: 12px;
-  font-size: 1rem;
-  box-shadow: 0 3px 8px rgba(11,37,69,0.1);
-  padding: 1rem 1.2rem; 
-  margin-bottom: 0.8rem; 
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(11,37,69,0.08);
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: block;
+  text-align: left;
 }
 
+/* Hover effect (same as presentation) */
+.research-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(11,37,69,0.15);
+}
+
+/* Card title */
 .research-card h3 {
   color: #d4af37;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.05rem;
   margin-bottom: 0.4rem;
 }
 
+/* Card paragraph */
 .research-card p {
   color: #0b2545;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   font-weight: 400;
-  line-height: 1.7;
-  letter-spacing: 0;
-  margin: 0; 
+  line-height: 1.6;
+  margin: 0;
 }
 
 /* List spacing */
@@ -65,10 +73,7 @@ author_profile: true
 }
 </style>
 
-
-<div class="research-section">
-
-### 🔬 Current Projects
+## 🔬 Current Projects
 
 <div class="research-card">
   <h3>EMG-EMG Coherence and Electrical Stimulation</h3>
@@ -85,5 +90,3 @@ author_profile: true
   <p>We investigated gait stability, joint kinematics, and interlimb coordination in individuals with bipolar disorder using 3D motion capture (Vicon) and force plate to understand sensorimotor integration and cognitive-motor coupling.</p>
 </div>
 
-
-</div>
