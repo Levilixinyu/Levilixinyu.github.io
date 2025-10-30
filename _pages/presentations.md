@@ -23,7 +23,7 @@ author_profile: true
   text-align: left;
   font-weight: 600;
   padding-bottom: 0.25rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 /* Presentation cards */
@@ -47,7 +47,7 @@ author_profile: true
   color: #d4af37;
   text-decoration: none;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .presentation-card a:hover {
   color: #f0c85d;
@@ -58,7 +58,7 @@ author_profile: true
 .presentation-card p {
   color: #0b2545;
   margin-top: 0.4rem;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   line-height: 1.6;
 }
 </style>
