@@ -1,0 +1,162 @@
+---
+layout: single
+title: "Gallery"
+permalink: /gallery/
+author_profile: true
+---
+
+<style>
+.page__content {
+  background-color: #f9fafc;
+  color: #0b2545;
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(11,37,69,0.12);
+}
+
+/* Section title */
+.gallery-section h2 {
+  color: #0b2545;
+  border-bottom: 2px solid rgba(212,175,55,0.4);
+  text-align: center;
+  font-weight: 600;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+/* Carousel container */
+.carousel {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 1.5rem auto 3rem auto;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(11,37,69,0.15);
+}
+
+/* Image track */
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* Individual images */
+.carousel img {
+  width: 100%;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+/* Navigation arrows */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: #0b2545;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel button:hover {
+  background-color: rgba(212,175,55,0.8);
+  color: white;
+}
+
+.carousel .prev {
+  left: 10px;
+}
+
+.carousel .next {
+  right: 10px;
+}
+</style>
+
+<div class="gallery-section">
+  <h2>🎨 Monet Collection</h2>
+  <div class="carousel" id="monet-carousel">
+    <button class="prev">&#10094;</button>
+    <div class="carousel-track">
+      <img src="/images/monet1.jpg" alt="Monet 1">
+      <img src="/images/monet2.jpg" alt="Monet 2">
+      <img src="/images/monet3.jpg" alt="Monet 3">
+      <img src="/images/monet4.jpg" alt="Monet 4">
+      <img src="/images/monet5.jpg" alt="Monet 5">
+      <img src="/images/monet6.jpg" alt="Monet 6">
+      <img src="/images/monet7.jpg" alt="Monet 7">
+      <img src="/images/monet8.jpg" alt="Monet 8">
+      <img src="/images/monet9.jpg" alt="Monet 9">
+      <img src="/images/monet10.jpg" alt="Monet 10">
+      <img src="/images/monet11.jpg" alt="Monet 11">
+      <img src="/images/monet12.jpg" alt="Monet 12">
+      <img src="/images/monet13.jpg" alt="Monet 13">
+      <img src="/images/monet14.jpg" alt="Monet 14">
+      <img src="/images/monet15.jpg" alt="Monet 15">
+      <img src="/images/monet16.jpg" alt="Monet 16">
+      <img src="/images/monet17.jpg" alt="Monet 17">
+      <img src="/images/monet18.jpg" alt="Monet 18">
+      <img src="/images/monet19.jpg" alt="Monet 19">
+      <img src="/images/monet20.jpg" alt="Monet 20">
+      <img src="/images/monet21.jpg" alt="Monet 21">
+      <img src="/images/monet22.jpg" alt="Monet 22">
+      <img src="/images/monet23.jpg" alt="Monet 23">
+      <img src="/images/monet24.jpg" alt="Monet 24">
+      <img src="/images/monet25.jpg" alt="Monet 25">
+    <button class="next">&#10095;</button>
+  </div>
+</div>
+
+<div class="gallery-section">
+  <h2>🌿 Nature Photography</h2>
+  <div class="carousel" id="nature-carousel">
+    <button class="prev">&#10094;</button>
+    <div class="carousel-track">
+      <img src="/images/nature1.jpg" alt="Nature 1">
+      <img src="/images/nature2.jpg" alt="Nature 2">
+      <img src="/images/nature3.jpg" alt="Nature 3">
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+</div>
+
+<script>
+function createCarousel(carouselId) {
+  const carousel = document.getElementById(carouselId);
+  const track = carousel.querySelector(".carousel-track");
+  const images = track.querySelectorAll("img");
+  const prevButton = carousel.querySelector(".prev");
+  const nextButton = carousel.querySelector(".next");
+  let index = 0;
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  prevButton.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    updateCarousel();
+  });
+
+  nextButton.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    updateCarousel();
+  });
+
+  // 自动轮播（可选）
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    updateCarousel();
+  }, 5000);
+}
+
+// 初始化两个轮播
+createCarousel("monet-carousel");
+createCarousel("nature-carousel");
+</script>
