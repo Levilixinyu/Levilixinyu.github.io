@@ -23,9 +23,9 @@ author:
  
 # Appearance
 theme_skin: "default"
-primary_color: "#0b2545"     # 深蓝主色
-accent_color: "#d4af37"      # 金色点缀
-background_color: "#f9f9f9"  # 浅底衬托蓝金对比
+primary_color: "#0b2545"   
+accent_color: "#d4af37"      
+background_color: "#fdf6e3"  
 text_color: "#1a1a1a"
 link_color: "#d4af37"  
 markdown: kramdown
