@@ -35,6 +35,7 @@ author_profile: true
 .research-card {
   background-color: #f9fafc;
   border-radius: 12px;
+  font-size: 1rem;
   box-shadow: 0 3px 8px rgba(11,37,69,0.1);
   padding: 1rem 1.2rem; 
   margin-bottom: 0.8rem; 
@@ -42,7 +43,7 @@ author_profile: true
 
 .research-card h3 {
   color: #d4af37;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1rem;
   margin-bottom: 0.4rem;
 }
@@ -50,6 +51,7 @@ author_profile: true
 .research-card p {
   color: #0b2545;
   font-size: 0.8rem;
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
   line-height: 1.7;
   letter-spacing: 0;
   margin: 0; 
@@ -65,7 +67,7 @@ author_profile: true
 
 <div class="research-section">
 
-### 🔬 Current Research Projects
+### 🔬 Current Projects
 
 <div class="research-card">
   <h3>EMG-EMG Coherence and Electrical Stimulation</h3>
