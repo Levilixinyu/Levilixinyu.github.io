@@ -59,7 +59,7 @@
    * fatigue, and NMES (synchronous, non-selective recruitment)
    * ========================================================= */
   class MUPool {
-    constructor(n = 12, len = 1500, fs = 1000) {
+    constructor(n = 12, len = 3000, fs = 2000) {          // surface EMG sampled at 2 kHz
       this.n = n; this.fs = fs; this.len = len;
       this.t = 0;
       this.emg = new Float32Array(len);
@@ -70,7 +70,7 @@
       const order = [...Array(n).keys()].sort(() => Math.random() - 0.5);
       for (let i = 0; i < n; i++) {
         const r = i / (n - 1);
-        const L = 8 + Math.round(r * 8);
+        const L = 16 + Math.round(r * 16);                // MUAP ~8–16 ms
         const tpl = new Float32Array(L);
         for (let k = 0; k < L; k++) {
           const x = (k - L / 2) / (L / 5);
@@ -100,7 +100,7 @@
     step(nSamples, drive, opt = {}) {
       const fatigue = opt.fatigue || 0;
       const gain = 1 + 0.5 * fatigue;
-      const tremor = fatigue * 0.04 * Math.sin(this.t / 90);
+      const tremor = fatigue * 0.04 * Math.sin(this.t / 180);
       for (let s = 0; s < nSamples; s++) {
         const idx = this.t % this.len;
         let m = 0;
@@ -127,7 +127,7 @@
             f[t % 64] += 3.2 * art; f[(t + 1) % 64] -= 2.2 * art; f[(t + 2) % 64] += 0.6 * art;   // stimulus artifact
             const intensity = opt.intensity ?? 0.6;
             this.units.forEach((u, i) => {
-              if (u.stimRank < intensity) { m |= 1 << i; this.addMUAP(u, gain * 1.2, 5); } // M-wave
+              if (u.stimRank < intensity) { m |= 1 << i; this.addMUAP(u, gain * 1.2, 10); } // M-wave ~5 ms after the pulse
             });
           }
         } else {
@@ -141,7 +141,7 @@
         this.t++;
       }
     }
-    rms(n = 300) {
+    rms(n = 600) {
       let s = 0;
       for (let k = 1; k <= n; k++) { const v = this.emg[(this.t - k + this.len * 4) % this.len]; s += v * v; }
       return Math.sqrt(s / n);
@@ -202,8 +202,8 @@
    * ========================================================= */
   const hero = $(".hero"), heroCanvas = $("#heroCanvas");
   watchVis(hero);
-  const heroPool = new MUPool(12, 1400);
-  heroPool.step(1400, 0.14);                                // prefill so the trace starts full
+  const heroPool = new MUPool(12, 2800);
+  heroPool.step(2800, 0.14);                                // prefill so the trace starts full
   let heroTarget = 0, heroDrive = 0, nmesUntil = 0, lastMove = 0, lastPt = null;
   hero.addEventListener("pointermove", (e) => {
     const now = performance.now();
@@ -229,7 +229,7 @@
       const idle = now - lastMove > 2500 ? 0.1 + 0.08 * Math.sin(now / 1400) : 0;
       heroDrive += (Math.max(heroTarget, idle, 0.04) - heroDrive) * 0.08;
       const nmes = now < nmesUntil;
-      heroPool.step(reduceMotion ? 0 : 10, heroDrive, { nmes, intensity: 0.7 });
+      heroPool.step(reduceMotion ? 0 : 20, heroDrive, { nmes, intensity: 0.7 });
 
       const { ctx, w, h } = fit(heroCanvas);
       ctx.clearRect(0, 0, w, h);
@@ -277,8 +277,8 @@
    * ========================================================= */
   const lab = $("#lab");
   watchVis(lab);
-  const labPool = new MUPool(12, 1600);
-  labPool.step(1600, 0.2);
+  const labPool = new MUPool(12, 3200);
+  labPool.step(3200, 0.2);
   const forceEl = $("#force"), fatigueEl = $("#fatigue");
   const nmesBtn = $("#nmesBtn"), rampBtn = $("#rampBtn");
   const forearm = $("#forearm"), bicep = $("#bicep"), pads = [$("#pad1"), $("#pad2")];
@@ -329,7 +329,7 @@
       const force = forceEl.value / 100, fatigue = fatigueEl.value / 100;
       // current → fraction of the pool recruited: nothing below motor threshold, all units near max
       const mA = +stimEl.value, recruit = recruitFor(mA);
-      labPool.step(reduceMotion ? 0 : 12, force, { fatigue, nmes: labNmes && mA > 0, intensity: recruit, artifact: 0.15 + 0.85 * (mA / MAX_PCT) });
+      labPool.step(reduceMotion ? 0 : 24, force, { fatigue, nmes: labNmes && mA > 0, intensity: recruit, artifact: 0.15 + 0.85 * (mA / MAX_PCT) });
 
       const r = fit($("#labRaster"));
       r.ctx.clearRect(0, 0, r.w, r.h);
@@ -351,7 +351,7 @@
       forearm.setAttribute("transform", `rotate(${-shown * 95} 70 130)`);
       bicep.style.opacity = 0.3 + 0.7 * shown;
       bicep.setAttribute("rx", 9 + shown * 6);
-      const flash = labNmes && labPool.stim.some((v, k) => v && (labPool.t - k + labPool.len) % labPool.len < 25);
+      const flash = labNmes && labPool.stim.some((v, k) => v && (labPool.t - k + labPool.len) % labPool.len < 50);
       pads.forEach((p) => p.classList.toggle("on", flash));
       stimDev.classList.toggle("pulse", flash);
 
@@ -381,7 +381,7 @@
    * Research card mini-visualizations
    * ========================================================= */
   const vizPools = new Map();
-  $$("[data-viz]").forEach((c) => { watchVis(c); if (c.dataset.viz === "mu") vizPools.set(c, new MUPool(6, 600)); });
+  $$("[data-viz]").forEach((c) => { watchVis(c); if (c.dataset.viz === "mu") vizPools.set(c, new MUPool(6, 1200)); });
   function vizLoop(now) {
     const t = now / 1000;
     $$("[data-viz]").forEach((c) => {
@@ -411,7 +411,7 @@
       } else if (kind === "mu") {
         const pool = vizPools.get(c);
         const drive = 0.15 + 0.75 * (0.5 - 0.5 * Math.cos(t * 0.6)); // slow ramp up & down
-        pool.step(reduceMotion ? 0 : 6, drive);
+        pool.step(reduceMotion ? 0 : 12, drive);
         drawRaster(ctx, pool, 0, 8, w, h - 16);
       } else if (kind === "gait") {
         drawGait(ctx, w, h, t);
