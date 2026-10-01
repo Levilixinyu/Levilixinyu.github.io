@@ -487,3 +487,15 @@ details p { font-size: 0.9rem; color: var(--ink); opacity: 0.85; }
 .stim-zones i:nth-child(3) { border-color: color-mix(in srgb, var(--stim) 70%, transparent); }
 .stim-zones i:nth-child(4) { border-color: color-mix(in srgb, var(--z5) 60%, transparent); }
 
+
+/* ========== Bigger, framed "tiny experiments" block ========== */
+.exp-deck { position: relative; margin: 2rem 0 0.5rem; padding: 1.6rem 1.1rem 1rem; border: 1.5px dashed color-mix(in srgb, var(--signal) 55%, transparent); border-radius: 20px; background: color-mix(in srgb, var(--signal) 5%, transparent); }
+.exp-deck .chips-hint { margin: -0.4rem 0 0.2rem 0.2rem; font-size: 1.9rem; }
+.exp-deck .chips { gap: 0.6rem; margin: 0.6rem 0 0.4rem; }
+.exp-deck .chip { font-size: 0.98rem; padding: 0.55rem 1.05rem; }
+.exp-deck .chip-egg { padding-right: 1.8rem; border-color: color-mix(in srgb, var(--signal) 35%, var(--line)); }
+.exp-deck .chip-egg:hover { background: color-mix(in srgb, var(--signal) 12%, transparent); box-shadow: 0 6px 18px color-mix(in srgb, var(--signal) 18%, transparent); }
+.egg-ic { display: inline-block; width: 1.2em; margin-right: 0.35rem; text-align: center; color: var(--signal); }
+.exp-deck .mini { margin: 0.6rem 0 0.2rem; }
+.exp-deck + .cert { margin-top: 2rem; }
+@media (max-width: 640px) { .exp-deck { padding: 1.3rem 0.8rem 0.8rem; } .exp-deck .chips-hint { font-size: 1.45rem; } .exp-deck .chip { font-size: 0.9rem; } }
