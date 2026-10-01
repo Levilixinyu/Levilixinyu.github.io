@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=867784">
+  <link rel="stylesheet" href="css/style.css?v=895702">
 </head>
 <body>
 
@@ -69,27 +69,29 @@
         <li>How does neuromuscular control adapt under different <b>loading</b>, <b>fatigue</b>, and <b>pain</b>?</li>
         <li>How can <b>neuromuscular electrical stimulation (NMES)</b> restore motor unit firing, muscle architecture, and function?</li>
       </ol>
-      <div class="chips-hint" id="chipsHint" aria-hidden="true">
-        <span>click me! each tag hides a tiny experiment</span>
-        <svg viewBox="0 0 60 40" width="46" height="31"><path d="M4 6 C 22 2, 40 10, 44 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M36 25 L44 32 L50 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div class="chips" id="eggChips">
-        <button class="chip chip-egg" data-egg="coherence" aria-expanded="false">EMG–EMG coherence</button>
-        <button class="chip chip-egg" data-egg="decomp" aria-expanded="false">Motor unit decomposition</button>
-        <button class="chip chip-egg" data-egg="fes" aria-expanded="false">FES &amp; wearable tech</button>
-        <button class="chip chip-egg" data-egg="gait" aria-expanded="false">Gait analysis</button>
-        <button class="chip chip-egg" data-egg="vo2" aria-expanded="false">Exercise physiology</button>
-        <button class="chip chip-cat" id="catBtn">🐈 Cat person, 100%</button>
-      </div>
-      <div class="mini" id="mini" hidden>
-        <div class="mini-head">
-          <p class="mono mini-title" id="miniTitle"></p>
-          <button class="mini-close" id="miniClose" aria-label="Close">×</button>
+      <div class="exp-deck">
+        <div class="chips-hint" id="chipsHint" aria-hidden="true">
+          <span>click me! each tag hides a tiny experiment</span>
+          <svg viewBox="0 0 60 40" width="62" height="42"><path d="M4 6 C 22 2, 40 10, 44 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M36 25 L44 32 L50 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <canvas id="miniCanvas"></canvas>
-        <div class="mini-foot">
-          <p class="mini-note" id="miniNote"></p>
-          <div class="mini-ctl" id="miniCtl"></div>
+        <div class="chips" id="eggChips">
+          <button class="chip chip-egg" data-egg="coherence" aria-expanded="false"><span class="egg-ic" aria-hidden="true">∿</span>EMG–EMG coherence</button>
+          <button class="chip chip-egg" data-egg="decomp" aria-expanded="false"><span class="egg-ic" aria-hidden="true">⫶</span>Motor unit decomposition</button>
+          <button class="chip chip-egg" data-egg="fes" aria-expanded="false"><span class="egg-ic" aria-hidden="true">⚡</span>FES &amp; wearable tech</button>
+          <button class="chip chip-egg" data-egg="gait" aria-expanded="false"><span class="egg-ic" aria-hidden="true">👣</span>Gait analysis</button>
+          <button class="chip chip-egg" data-egg="vo2" aria-expanded="false"><span class="egg-ic" aria-hidden="true">🫁</span>Exercise physiology</button>
+          <button class="chip chip-cat" id="catBtn">🐈 Cat person, 100%</button>
+        </div>
+        <div class="mini" id="mini" hidden>
+          <div class="mini-head">
+            <p class="mono mini-title" id="miniTitle"></p>
+            <button class="mini-close" id="miniClose" aria-label="Close">×</button>
+          </div>
+          <canvas id="miniCanvas"></canvas>
+          <div class="mini-foot">
+            <p class="mini-note" id="miniNote"></p>
+            <div class="mini-ctl" id="miniCtl"></div>
+          </div>
         </div>
       </div>
       <button class="cert" id="certCard" aria-label="View ACSM Certified Exercise Physiologist certificate">
@@ -546,6 +548,6 @@
 
 <div id="catLayer" aria-hidden="true"></div>
 
-<script src="js/main.js?v=867784"></script>
+<script src="js/main.js?v=895702"></script>
 </body>
 </html>
