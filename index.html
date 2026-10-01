@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xinyu Li · Neuromuscular Physiology</title>
+  <meta name="description" content="Xinyu Li (李心钰), Ph.D. candidate in Biomechanics and NeuroRehab at the University of Texas at Austin. EMG, motor units, NMES, wearable tech.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=834826">
+</head>
+<body>
+
+<!-- session progress bar: colored by heart-rate zones -->
+<div class="session-bar" aria-hidden="true"><span id="sessionFill"></span></div>
+
+<header class="nav">
+  <a href="#top" class="brand"><span class="brand-dot"></span>XL</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#lab">Lab</a>
+    <a href="#research">Research</a>
+    <a href="#journey">Journey</a>
+    <a href="#talks">Talks</a>
+    <a href="#gallery">Gallery</a>
+  </nav>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">◐</button>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <p class="mono eyebrow"><span class="rec"></span> LIVE · sEMG · CH1 · 2 kHz</p>
+    <h1>Xinyu Li <span class="cn">李心钰</span></h1>
+    <p class="cert-pill mono"><span>✓</span> ACSM-EP · Certified Exercise Physiologist</p>
+    <p class="role mono" aria-label="Where neurons meet neural nets"><span class="role-prompt">&gt;</span> <span id="roleText">Where neurons meet neural nets</span><span class="caret"></span></p>
+    <p class="lead">Ph.D. candidate in <em>Biomechanics and NeuroRehab</em><br>at The University of Texas at Austin.<br>From motor neuron signals to movement recovery:<br>I study how the nervous system drives muscle, and how stimulation can retrain it.</p>
+    <div class="hero-hint mono">
+      <span><b>move</b> → voluntary drive</span>
+      <span><b>click</b> → NMES burst</span>
+    </div>
+    <div class="hero-readout mono" id="heroReadout">
+      <div><small>DRIVE</small><b id="hDrive">0</b>%</div>
+      <div><small>MUs ON</small><b id="hMU">0</b>/12</div>
+      <div><small>RMS</small><b id="hRMS">0.00</b>mV</div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cue mono">scroll ↓</a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section" id="about">
+  <div class="about-grid">
+    <figure class="portrait reveal">
+      <div class="portrait-frame">
+        <img src="img/headshot.jpg" alt="Portrait of Xinyu Li">
+      </div>
+    </figure>
+    <div class="about-text reveal">
+      <p class="kicker mono">01 / About</p>
+      <h2>Hi there, I'm Xinyu <span class="wave">👋</span></h2>
+      <p>I am a Ph.D. researcher studying Neuromuscular Physiology at the University of Texas at Austin, supervised by
+        <a href="https://scholar.google.com/citations?hl=en&user=V3M92AQAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" rel="noopener">Dr.&nbsp;Lisa Griffin</a>.</p>
+      <p>My research asks two questions:</p>
+      <ol class="questions">
+        <li>How does neuromuscular control adapt under different <b>loading</b>, <b>fatigue</b>, and <b>pain</b>?</li>
+        <li>How can <b>neuromuscular electrical stimulation (NMES)</b> restore motor unit firing, muscle architecture, and function?</li>
+      </ol>
+      <div class="chips-hint" id="chipsHint" aria-hidden="true">
+        <span>click me! each tag hides a tiny experiment</span>
+        <svg viewBox="0 0 60 40" width="46" height="31"><path d="M4 6 C 22 2, 40 10, 44 30" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M36 25 L44 32 L50 22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="chips" id="eggChips">
+        <button class="chip chip-egg" data-egg="coherence" aria-expanded="false">EMG–EMG coherence</button>
+        <button class="chip chip-egg" data-egg="decomp" aria-expanded="false">Motor unit decomposition</button>
+        <button class="chip chip-egg" data-egg="fes" aria-expanded="false">FES &amp; wearable tech</button>
+        <button class="chip chip-egg" data-egg="gait" aria-expanded="false">Gait analysis</button>
+        <button class="chip chip-egg" data-egg="vo2" aria-expanded="false">Exercise physiology</button>
+        <button class="chip chip-cat" id="catBtn">🐈 Cat person, 100%</button>
+      </div>
+      <div class="mini" id="mini" hidden>
+        <div class="mini-head">
+          <p class="mono mini-title" id="miniTitle"></p>
+          <button class="mini-close" id="miniClose" aria-label="Close">×</button>
+        </div>
+        <canvas id="miniCanvas"></canvas>
+        <div class="mini-foot">
+          <p class="mini-note" id="miniNote"></p>
+          <div class="mini-ctl" id="miniCtl"></div>
+        </div>
+      </div>
+      <button class="cert" id="certCard" aria-label="View ACSM Certified Exercise Physiologist certificate">
+        <span class="cert-inner">
+          <span class="cert-front">
+            <span class="cert-seal mono">ACSM<br>EP</span>
+            <span class="cert-text">
+              <small class="mono">certified</small>
+              <b>Exercise Physiologist</b>
+              <small>American College of Sports Medicine</small>
+            </span>
+          </span>
+          <span class="cert-back mono">
+            <span><small>credential id</small>2004141</span>
+            <span><small>issued</small>Aug 2026</span>
+            <span><small>valid through</small>Aug 2029</span>
+            <span class="cert-view">view ↗</span>
+          </span>
+        </span>
+      </button>
+      <div class="toolkit-groups">
+        <div class="tk-group">
+          <p class="mono toolkit-label">research &amp; data</p>
+          <div class="toolkit mono">
+            <span>Surface &amp; fine-wire EMG</span><span>Spike2</span><span>MATLAB</span><span>Python</span><span>R</span><span>Vicon Nexus</span><span>Force plates</span><span>SQL</span>
+          </div>
+        </div>
+        <div class="tk-group tk-venture">
+          <p class="mono toolkit-label">venture &amp; BD</p>
+          <div class="toolkit mono">
+            <span>AI4Health</span><span>Due diligence</span><span>Market mapping</span><span>PitchBook · Capital IQ</span>
+          </div>
+        </div>
+      </div>
+      <div class="links">
+        <a class="btn" href="mailto:xinyul@utexas.edu">✉ xinyul@utexas.edu</a>
+        <a class="btn ghost" href="https://scholar.google.com/citations?user=s2OLwSsAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+        <a class="btn ghost" href="https://www.researchgate.net/profile/Xinyu-Li-196" target="_blank" rel="noopener">ResearchGate</a>
+        <a class="btn ghost" href="https://education.utexas.edu/student/xinyu_li/" target="_blank" rel="noopener">UT Profile</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/xinyul2624/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAB: MOTOR UNIT SIMULATOR ============ -->
+<section class="section lab" id="lab">
+  <div class="section-head reveal">
+    <p class="kicker mono">02 / Interactive Lab</p>
+    <h2>The motor unit recruitment simulator</h2>
+    <p class="sub">Drag the force slider and watch Henneman's size principle at work: small, low-threshold units fire first; big ones join as force rises. Then add fatigue — or switch on NMES and see recruitment become synchronous and non-selective.</p>
+  </div>
+
+  <div class="lab-grid reveal">
+    <div class="panel scope">
+      <div class="panel-top mono">
+        <span>MOTOR UNIT SPIKE TRAINS · 12 units</span>
+        <span class="tag" id="labMode">VOLUNTARY</span>
+      </div>
+      <canvas id="labRaster"></canvas>
+      <div class="panel-top mono"><span>SURFACE EMG (interference pattern)</span><span id="labRMS">RMS 0.00 mV</span></div>
+      <canvas id="labEMG"></canvas>
+    </div>
+
+    <div class="panel controls">
+      <svg class="arm" viewBox="0 0 220 220" aria-label="Arm model">
+        <defs>
+          <linearGradient id="skin" x1="0" x2="1"><stop offset="0" stop-color="var(--arm1)"/><stop offset="1" stop-color="var(--arm2)"/></linearGradient>
+        </defs>
+        <circle cx="70" cy="40" r="20" class="arm-joint"/>
+        <rect x="56" y="40" width="28" height="90" rx="14" fill="url(#skin)"/>
+        <ellipse id="bicep" cx="78" cy="88" rx="10" ry="26" class="muscle"/>
+        <g id="forearm" transform="rotate(0 70 130)">
+          <rect x="56" y="118" width="110" height="24" rx="12" fill="url(#skin)"/>
+          <circle cx="172" cy="130" r="12" class="arm-joint"/>
+          <rect x="180" y="114" width="26" height="32" rx="4" class="weight"/>
+        </g>
+        <!-- wearable NMES sleeve electrodes -->
+        <rect id="pad1" x="80" y="62" width="12" height="16" rx="3" class="epad"/>
+        <rect id="pad2" x="80" y="100" width="12" height="16" rx="3" class="epad"/>
+        <circle cx="70" cy="130" r="9" class="arm-joint"/>
+      </svg>
+
+      <label class="ctl">
+        <span class="mono">Force <b id="forceVal">20</b>% MVC</span>
+        <input type="range" id="force" min="0" max="100" value="20">
+      </label>
+      <label class="ctl">
+        <span class="mono">Fatigue <b id="fatigueVal">0</b>%</span>
+        <input type="range" id="fatigue" min="0" max="100" value="0">
+      </label>
+      <label class="ctl ctl-stim">
+        <span class="mono">⚡ Stim intensity <b id="stimVal">40</b>%</span>
+        <input type="range" id="stimI" min="0" max="100" value="40">
+        <span class="stim-zones mono" aria-hidden="true"><i style="flex:8" title="not felt"></i><i style="flex:12" title="sensory only">sens.</i><i style="flex:80">motor</i></span>
+      </label>
+      <div class="lab-device">
+        <button class="stim-dev" id="stimDev" aria-label="Neuromuscular stimulator: toggle NMES">
+          <img src="img/stimulator.png" alt="NEUBIE neuromuscular stimulator">
+          <span class="stim-screen mono"><b><span id="stimScreen">40%</span> · 40 Hz</b><i></i></span>
+        </button>
+        <div class="toggles">
+          <button class="toggle" id="nmesBtn" aria-pressed="false">⚡ NMES 40 Hz</button>
+          <button class="toggle" id="rampBtn" aria-pressed="false">↗ Slow ramp</button>
+        </div>
+      </div>
+      <div class="stats mono">
+        <div><small>recruited</small><b id="sRec">0</b></div>
+        <div><small>mean rate</small><b id="sFR">0</b><i>Hz</i></div>
+        <div><small>largest MU</small><b id="sBig">–</b></div>
+      </div>
+      <p class="note" id="labNote">Low force: only the smallest, slow-twitch units are active.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESEARCH ============ -->
+<section class="section" id="research">
+  <div class="section-head reveal">
+    <p class="kicker mono">03 / Research</p>
+    <h2>Current projects</h2>
+  </div>
+  <div class="cards">
+    <article class="card reveal" data-tilt>
+      <div class="card-viz"><canvas data-viz="coherence"></canvas></div>
+      <p class="mono card-tag">NMES · coherence</p>
+      <h3>EMG–EMG coherence &amp; electrical stimulation</h3>
+      <p class="card-short">How does NMES reshape the shared neural drive between shoulder muscles in people with rotator cuff disease?</p>
+      <details>
+        <summary>Read more</summary>
+        <p>NMES is a well-established rehabilitation tool known for enhancing muscle activation and promoting motor recovery. It can induce plastic changes in motor pathways, particularly within the motor cortex and corticospinal tract. By stimulating sensory pathways, NMES provides proprioceptive feedback that influences motor control programming in the central nervous system. EMG–EMG coherence assesses the frequency-domain similarity of neural inputs to functionally related muscles, giving insight into shared neural drive between motor neuron pools. Investigating these effects across conditions is critical for tailoring NMES-based rehabilitation protocols to the capabilities and recovery goals of individuals with neurological disorders.</p>
+      </details>
+    </article>
+    <article class="card reveal" data-tilt>
+      <div class="card-viz"><canvas data-viz="mu"></canvas></div>
+      <p class="mono card-tag">decomposition · firing</p>
+      <h3>Motor unit analysis</h3>
+      <p class="card-short">Does NMES alter motor unit firing rates and recruitment thresholds during slow ramp contractions?</p>
+      <details>
+        <summary>Read more</summary>
+        <p>A motor unit is the functional unit of skeletal muscle: a single motor neuron and all the muscle fibers it controls. Efficient firing rate and recruitment threshold are essential for restoring functional movement. In healthy individuals, fast-twitch motor units are recruited at higher force levels following Henneman's size principle, while in people with neuromuscular impairments these units may show delayed or inefficient activation. This study uses a series of motor unit decomposition methods to determine whether NMES alters motor unit firing patterns during slow ramp contractions.</p>
+      </details>
+    </article>
+    <article class="card reveal" data-tilt>
+      <div class="card-viz"><canvas data-viz="gait"></canvas></div>
+      <p class="mono card-tag">motion capture · force plates</p>
+      <h3>Gait in neuropsychiatric populations</h3>
+      <p class="card-short">Gait stability, joint kinematics, and interlimb coordination in individuals with bipolar disorder.</p>
+      <details>
+        <summary>Read more</summary>
+        <p>Using 3D motion capture (Vicon), force plates, and sEMG, we investigated the longitudinal stability of gait behavior within and between mood phases to understand sensorimotor integration and cognitive–motor coupling.</p>
+      </details>
+    </article>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="section" id="journey">
+  <div class="section-head reveal">
+    <p class="kicker mono">04 / Journey</p>
+    <h2>Training log</h2>
+    <p class="sub">Every career is an endurance event — research, clinic, industry, classroom. Scroll to log the splits; filter by lap type.</p>
+  </div>
+  <div class="filters mono" id="tlFilters">
+    <button class="on" data-t="all">All</button>
+    <button data-t="research">Research</button>
+    <button data-t="industry">Industry</button>
+    <button data-t="clinical">Clinical</button>
+    <button data-t="teaching">Teaching</button>
+    <button data-t="edu">Education &amp; certs</button>
+  </div>
+  <div class="timeline">
+    <div class="tl-line"><span id="tlFill"></span></div>
+
+    <div class="tl-item reveal" data-zone="5" data-t="industry">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">May — Aug 2026 · Shanghai <span class="tl-type">Industry</span></p>
+      <h3>Venture Fund Intern · AstraZeneca</h3>
+      <p>International Business Development &amp; Venture Fund — due diligence on AI-driven biotech.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Conducted due diligence on AI-driven biotech companies across drug discovery, target identification, and generative molecular design, focused on oncology and adjacent therapeutic areas.</li>
+          <li>Mapped the humanoid robotics value chain (full-stack integrators, foundation-model, and core-component layers) and led expert interviews with 20+ humanoid robotics and lab-automation startups.</li>
+          <li>Supported valuation frameworks; used PitchBook and Capital IQ for market mapping, deal sourcing, and competitive landscape analysis.</li>
+        </ul>
+      </details>
+      <div class="polaroids" data-album="az">
+        <figure><img src="img/az-green-wall.jpg" alt="The AstraZeneca moss wall at the Shanghai office" loading="lazy"><figcaption>The moss wall 🌿</figcaption></figure>
+        <figure><img src="img/az-friends.jpg" alt="Photo-booth strips with fellow interns" loading="lazy"><figcaption>Intern crew 📸</figcaption></figure>
+        <figure><img src="img/az-pearl-tower.jpg" alt="View of the Oriental Pearl Tower and Suzhou Creek from the office window" loading="lazy"><figcaption>Office window view 🏙️</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tl-item reveal" data-zone="5" data-t="edu">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">Aug 2026 <span class="tl-type">Certification</span></p>
+      <h3>ACSM Certified Exercise Physiologist (ACSM-EP)</h3>
+      <p>American College of Sports Medicine · Credential ID 2004141 · valid through Aug 2029</p>
+      <button class="cert-link mono" data-open-cert>View certificate ↗</button>
+    </div>
+
+    <div class="tl-item reveal" data-zone="5" data-t="research">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">Aug 2023 — now · Austin <span class="tl-type">Research</span></p>
+      <h3>Ph.D. Candidate &amp; Student Principal Investigator · UT Austin</h3>
+      <p>Dissertation: <i>NMES effects on neuromuscular control in rotator cuff disease.</i></p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Lead a clinical study of how NMES affects shoulder muscle coordination, combining surface and intramuscular fine-wire EMG with measures of stimulation comfort, tolerability, and pain.</li>
+          <li>Co-design a custom intramuscular EMG digitization device with mechanical engineering collaborators — defining acquisition requirements, evaluating signal quality, and recommending refinements.</li>
+          <li>Characterize coordination with intermuscular coherence (Spike2) and motor unit decomposition (MATLAB EMGlab, R), estimating common synaptic input and relating recruitment thresholds to force.</li>
+          <li>Build Python models that predict stimulation-induced changes in force and fatigue resistance from EMG features, validated with k-fold cross-validation.</li>
+        </ul>
+      </details>
+      <div class="polaroids" data-album="phd">
+        <figure><img src="img/phd-emg-placement.jpg" alt="Surface and fine-wire EMG electrode placement on the shoulder: supraspinatus, infraspinatus, and anterior, middle, posterior deltoid" loading="lazy"><figcaption>Surface + fine-wire EMG</figcaption></figure>
+        <figure><img src="img/phd-nmes-electrodes.jpg" alt="NMES electrodes over supraspinatus and infraspinatus" loading="lazy"><figcaption>NMES on SS &amp; IS ⚡</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="tl-item reveal" data-zone="4" data-t="teaching">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">Jul 2024 — now · Austin <span class="tl-type">Teaching</span></p>
+      <h3>Graduate Teaching Assistant · UT Austin</h3>
+      <p>KIN 424K Applied Human Anatomy · KIN 336 Neuromuscular Control</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Instruct 75+ undergraduates per term in Applied Human Anatomy, running 3 lab sections a week.</li>
+          <li>Collaborate with faculty on lecture content, the online learning platform, and feedback to improve learning outcomes.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="tl-item reveal" data-zone="4" data-t="industry">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">Mar — Jul 2023 <span class="tl-type">Industry</span></p>
+      <h3>Medical Intern · Pfizer</h3>
+      <p>Medical affairs, antibiotic team — real-world effectiveness against multi-drug-resistant pathogens.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Analyzed antimicrobial susceptibility data (MIC values, resistance patterns) with SQL to evaluate Sulperazon, Cresemba, and Zavicefta against multi-drug-resistant pathogens.</li>
+          <li>Ran systematic literature reviews (PubMed, Embase) and presented therapeutic updates to healthcare providers in line with regulatory standards.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="tl-item reveal" data-zone="3" data-t="research">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">Jan 2022 — Mar 2023 · Ann Arbor <span class="tl-type">Research</span></p>
+      <h3>Graduate Research Assistant · University of Michigan</h3>
+      <p>Behavioral Biomechanics Lab — longitudinal gait in bipolar disorder.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Processed 6-month longitudinal gait data in Vicon Nexus (motion capture, EMG, force platforms); extracted kinematic and kinetic features such as gait speed, step length, joint moments, power, and GRFs.</li>
+          <li>Applied mixed models and MANOVA in R to evaluate gait stability, energy cost, and postural control across mood phases; presented at NACOB 2022.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="tl-item reveal" data-zone="3" data-t="edu">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">2020 — 2022 <span class="tl-type">Education</span></p>
+      <h3>M.S. Kinesiology · University of Michigan, Ann Arbor</h3>
+    </div>
+
+    <div class="tl-item reveal" data-zone="2" data-t="clinical">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">Jul — Nov 2019 · Beijing <span class="tl-type">Clinical</span></p>
+      <h3>Student Physical Therapist · Peking University Third Hospital</h3>
+      <p>Full-time rotations in Neurology, Rehabilitation Medicine, and Outpatient departments.</p>
+      <details>
+        <summary>Details</summary>
+        <ul>
+          <li>Treated patients with stroke, Parkinson's disease, spinal cord injury, and post-operative musculoskeletal conditions.</li>
+          <li>Delivered individualized rehab protocols under supervision using gait analysis systems, robotic walking trainers, spinal traction, and computerized balance platforms.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="tl-item reveal" data-zone="1" data-t="edu">
+      <span class="tl-dot"></span>
+      <p class="mono tl-date">2016 — 2020 · Beijing <span class="tl-type">Education</span></p>
+      <h3>B.S. Sports Medicine · Beijing Sport University</h3>
+      <p>Pilot study using NMES to improve early-stage upper-limb function after stroke.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TALKS ============ -->
+<section class="section" id="talks">
+  <div class="section-head reveal">
+    <p class="kicker mono">05 / Presentations</p>
+    <h2>Conference talks &amp; posters</h2>
+  </div>
+  <div class="filters mono" id="talkFilters">
+    <button class="on" data-f="all">All</button>
+    <button data-f="ACSM">ACSM</button>
+    <button data-f="SfN">SfN</button>
+    <button data-f="NACOB">NACOB</button>
+  </div>
+  <div class="talks" id="talkList">
+    <div class="talk talk-media reveal" data-v="SfN">
+      <span class="talk-year mono">2025</span>
+      <span class="talk-body">
+        <a href="files/sfn2025-poster.pdf" target="_blank" rel="noopener"><b>Acute neuromuscular electrical stimulation enhances EMG median frequency and delays fatigue in individuals with rotator cuff disease</b></a>
+        <small><u>Li, X.</u> &amp; Griffin, L. · Society for Neuroscience, San Diego, CA</small>
+        <span class="talk-gallery" data-album="sfn25">
+          <button class="tg-item tg-poster" data-src="img/sfn2025-poster.jpg" data-dl="files/sfn2025-poster.pdf" aria-label="View poster">
+            <img src="img/sfn2025-poster-thumb.jpg" alt="Poster: Acute NMES enhances EMG median frequency and delays fatigue in rotator cuff disease" loading="lazy">
+            <span class="mono">Poster · PDF</span>
+          </button>
+          <button class="tg-item" data-src="img/sfn2025-poster-session.jpg" aria-label="View photo at the poster session">
+            <img src="img/sfn2025-poster-session.jpg" alt="Presenting the poster at SfN 2025 in San Diego" loading="lazy">
+            <span class="mono">Poster session</span>
+          </button>
+          <button class="tg-item" data-src="img/sfn2025-meeting.jpg" aria-label="View photo at Neuroscience 2025, San Diego">
+            <img src="img/sfn2025-meeting.jpg" alt="Society for Neuroscience signage at Neuroscience 2025, San Diego" loading="lazy">
+            <span class="mono">SfN ’25 · San Diego</span>
+          </button>
+        </span>
+      </span>
+      <a class="talk-arrow" href="files/sfn2025-poster.pdf" target="_blank" rel="noopener" aria-label="Open poster PDF">↗</a>
+    </div>
+    <div class="talk talk-media reveal" data-v="ACSM">
+      <span class="talk-year mono">2025</span>
+      <span class="talk-body">
+        <a href="https://doi.org/10.1249/01.mss.0001156100.15489.57" target="_blank" rel="noopener"><b>Effects of NMES on EMG–EMG coherence across glenohumeral muscles during fatigue in rotator cuff disease</b></a>
+        <small><u>Li, X.</u>, Zhu, H., Fan, Z., &amp; Griffin, L. · ACSM Annual Meeting, Atlanta, GA</small>
+        <span class="talk-gallery" data-album="acsm25">
+          <button class="tg-item tg-poster" data-src="img/acsm2025-poster.jpg" data-dl="files/acsm2025-poster.pdf" aria-label="View poster">
+            <img src="img/acsm2025-poster-thumb.jpg" alt="Poster: Effects of NMES on EMG–EMG coherence across glenohumeral muscles" loading="lazy">
+            <span class="mono">Poster · PDF</span>
+          </button>
+          <button class="tg-item" data-src="img/acsm2025-poster-session.jpg" aria-label="View photo at the poster session">
+            <img src="img/acsm2025-poster-session.jpg" alt="Presenting the poster at ACSM 2025" loading="lazy">
+            <span class="mono">Poster session</span>
+          </button>
+          <button class="tg-item" data-src="img/acsm2025-meeting.jpg" aria-label="View photo at the ACSM 2025 Annual Meeting">
+            <img src="img/acsm2025-meeting.jpg" alt="At the ACSM 2025 Annual Meeting" loading="lazy">
+            <span class="mono">ACSM ’25</span>
+          </button>
+        </span>
+      </span>
+      <a class="talk-arrow" href="https://doi.org/10.1249/01.mss.0001156100.15489.57" target="_blank" rel="noopener" aria-label="Open abstract">↗</a>
+    </div>
+    <a class="talk reveal" data-v="ACSM" href="https://doi.org/10.1249/01.mss.0001156104.27965.e6" target="_blank" rel="noopener">
+      <span class="talk-year mono">2025</span>
+      <span class="talk-body"><b>Low EMG–EMG coherence across shoulder muscles during fatigue correlates with pain in rotator cuff disease</b>
+      <small>Luo, Z., <u>Li, X.</u>, Zhu, H., Yu, X., &amp; Griffin, L. · ACSM Annual Meeting, Atlanta, GA</small></span>
+      <span class="talk-arrow">↗</span>
+    </a>
+    <a class="talk reveal" data-v="SfN" href="https://www.researchgate.net/publication/383877347" target="_blank" rel="noopener">
+      <span class="talk-year mono">2024</span>
+      <span class="talk-body"><b>Effects of NMES on intermuscular EMG coherence across rotator cuff and deltoid muscles in people with rotator cuff disease</b>
+      <small><u>Li, X.</u>, Zhu, H., &amp; Griffin, L. · Society for Neuroscience, Chicago, IL</small></span>
+      <span class="talk-arrow">↗</span>
+    </a>
+    <a class="talk reveal" data-v="ACSM" href="https://doi.org/10.1249/01.mss.0001058344.48031.b4" target="_blank" rel="noopener">
+      <span class="talk-year mono">2024</span>
+      <span class="talk-body"><b>EMG coherence across shoulder muscles during fatigue in older adults with rotator cuff disease</b>
+      <small><u>Li, X.</u>, Zhu, H., &amp; Griffin, L. · ACSM Annual Meeting, Boston, MA</small></span>
+      <span class="talk-arrow">↗</span>
+    </a>
+    <a class="talk reveal" data-v="NACOB" href="https://www.researchgate.net/publication/383877480" target="_blank" rel="noopener">
+      <span class="talk-year mono">2022</span>
+      <span class="talk-body"><b>Longitudinal stability of gait behavior within and between mood phases in individuals with bipolar disorder</b>
+      <small>Gross, M., Kang, G., <u>Li, X.</u> · North American Congress of Biomechanics, Ottawa</small></span>
+      <span class="talk-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ TEACHING ============ -->
+<section class="section" id="teaching">
+  <div class="section-head reveal">
+    <p class="kicker mono">06 / Teaching</p>
+    <h2>In the anatomy lab</h2>
+  </div>
+  <div class="teach-grid">
+    <div class="teach-card reveal">
+      <p class="mono card-tag">KIN 424K</p>
+      <h3>Applied Human Anatomy</h3>
+      <p>Fall 2024 – present</p>
+    </div>
+    <div class="teach-card reveal">
+      <p class="mono card-tag">KIN 336</p>
+      <h3>Neuromuscular Control</h3>
+      <p>Summer 2025</p>
+    </div>
+  </div>
+  <p class="mono small-head">Fun tools</p>
+  <div class="tools">
+    <figure class="tool reveal"><img src="img/visiblebody.jpg" alt="Visible Body" loading="lazy"><figcaption>Visible Body</figcaption></figure>
+    <figure class="tool reveal"><img src="img/musclepuzzle.jpg" alt="Muscle puzzle" loading="lazy"><figcaption>Muscle Puzzle</figcaption></figure>
+    <figure class="tool reveal"><img src="img/musclepuzzlehead.jpg" alt="Head and neck muscle puzzle" loading="lazy"><figcaption>Head &amp; Neck</figcaption></figure>
+    <figure class="tool reveal"><img src="img/C4.jpg" alt="C4 vertebra" loading="lazy"><figcaption>C4's smile 😄</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section" id="gallery">
+  <div class="section-head reveal">
+    <p class="kicker mono">07 / Life</p>
+    <h2>Photography by me</h2>
+  </div>
+  <div class="filters mono" id="galTabs">
+    <button class="on" data-g="monet">🎨 Claude Monet collection</button>
+    <button data-g="view">🗺️ Across mountains &amp; seas</button>
+  </div>
+  <div class="masonry" id="masonry"></div>
+</section>
+
+<footer class="footer">
+  <p class="mono">END OF SESSION · thanks for visiting — hope you enjoy your life 🎐</p>
+  <p class="mono small">© <span id="yr"></span> Xinyu Li · Austin, TX</p>
+</footer>
+
+<!-- ============ WEARABLE HUD ============ -->
+<aside class="watch" id="watch" aria-label="Simulated wearable heart-rate monitor">
+  <button class="watch-face" id="watchFace" aria-expanded="false">
+    <span class="heart" id="heart">♥</span>
+    <span class="bpm mono"><b id="bpm">62</b><small>bpm</small></span>
+    <canvas id="ecg" width="120" height="34"></canvas>
+    <span class="zone mono" id="zone">Z1 · REST</span>
+  </button>
+  <div class="watch-panel" id="watchPanel">
+    <p class="mono wp-title">SESSION · simulated from your activity</p>
+    <div class="zones" id="zoneBars">
+      <span data-z="1"></span><span data-z="2"></span><span data-z="3"></span><span data-z="4"></span><span data-z="5"></span>
+    </div>
+    <div class="wp-stats mono">
+      <div><small>steps</small><b id="steps">0</b></div>
+      <div><small>kcal</small><b id="kcal">0.0</b></div>
+      <div><small>time</small><b id="ttime">0:00</b></div>
+    </div>
+    <p class="wp-note">Scroll and move to raise your heart rate. Rest and watch it recover — HR kinetics rise fast and recover slowly.</p>
+  </div>
+</aside>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-prev" aria-label="Previous">‹</button>
+  <img id="lbImg" alt="">
+  <button class="lb-next" aria-label="Next">›</button>
+  <p class="lb-count mono" id="lbCount"></p>
+  <a class="lb-dl mono" id="lbDl" href="#" download hidden>Download PDF ↓</a>
+</div>
+
+<div id="catLayer" aria-hidden="true"></div>
+
+<script src="js/main.js?v=834826"></script>
+</body>
+</html>
