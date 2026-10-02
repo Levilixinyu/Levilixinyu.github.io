@@ -499,3 +499,7 @@ details p { font-size: 0.9rem; color: var(--ink); opacity: 0.85; }
 .exp-deck .mini { margin: 0.6rem 0 0.2rem; }
 .exp-deck + .cert { margin-top: 2rem; }
 @media (max-width: 640px) { .exp-deck { padding: 1.3rem 0.8rem 0.8rem; } .exp-deck .chips-hint { font-size: 1.45rem; } .exp-deck .chip { font-size: 0.9rem; } }
+
+/* ========== Research: past projects ========== */
+.past-head { margin-top: 3.5rem; }
+.past-head h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); color: color-mix(in srgb, var(--ink) 85%, transparent); }

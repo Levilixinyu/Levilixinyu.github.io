@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=895702">
+  <link rel="stylesheet" href="css/style.css?v=964908">
 </head>
 <body>
 
@@ -236,13 +236,48 @@
       </details>
     </article>
     <article class="card reveal" data-tilt>
+      <div class="card-viz"><canvas data-viz="llmeval"></canvas></div>
+      <p class="mono card-tag">AI4Health · LLM evaluation</p>
+      <h3>Human evaluation of LLM-generated gait reports</h3>
+      <p class="card-short">Can language models describe stroke gait and EMG data completely, without claiming more than the data support?</p>
+      <details>
+        <summary>Read more</summary>
+        <p>A paired evaluation of three LLM configurations across 105 reports, built from public gait and EMG data of 25 stroke survivors and 10 healthy controls. I authored the system instructions and, with domain experts, co-developed case-specific evaluation criteria and a nine-category error taxonomy that separates required-content coverage from unsupported or incorrect claims. Three independent human raters completed 315 blinded report reviews. Paired bootstrap comparisons (20,000 resamples), inter-rater agreement, and sensitivity analyses showed that high content coverage can coexist with unsupported claims.</p>
+      </details>
+    </article>
+  </div>
+  <div class="section-head reveal past-head">
+    <h2>Past projects</h2>
+  </div>
+  <div class="cards">
+    <article class="card reveal" data-tilt>
       <div class="card-viz"><canvas data-viz="gait"></canvas></div>
-      <p class="mono card-tag">motion capture · force plates</p>
-      <h3>Gait in neuropsychiatric populations</h3>
+      <p class="mono card-tag">University of Michigan · 2022</p>
+      <h3>Gait biomechanics in bipolar disorder</h3>
       <p class="card-short">Gait stability, joint kinematics, and interlimb coordination in individuals with bipolar disorder.</p>
       <details>
         <summary>Read more</summary>
-        <p>Using 3D motion capture (Vicon), force plates, and sEMG, we investigated the longitudinal stability of gait behavior within and between mood phases to understand sensorimotor integration and cognitive–motor coupling.</p>
+        <p>Behavior Biomechanics Lab, with Prof. Melissa Gross. Using 3D motion capture (Vicon), force plates, and sEMG, we followed participants for six months and used mixed-effects models and MANOVA in R to relate gait instability and energy expenditure to mood-phase transitions. Presented at NACOB 2022.</p>
+      </details>
+    </article>
+    <article class="card reveal" data-tilt>
+      <div class="card-viz"><canvas data-viz="text2sql"></canvas></div>
+      <p class="mono card-tag">UT Austin iSchool · 2025</p>
+      <h3>Clinical temporal reasoning in LLMs</h3>
+      <p class="card-short">Teaching an LLM to turn time-dependent clinical questions into correct SQL over MIMIC-III/IV.</p>
+      <details>
+        <summary>Read more</summary>
+        <p>With Prof. Ying Ding. A temporal-aware Text-to-SQL framework that pairs a 17-rule temporal parser with structured GPT-4.1 prompts to interpret relative, absolute, and event-based time expressions. Explicit time templates and few-shot examples raised SQL exact-match accuracy from 81.8% to 90.9% over naive prompting; execution-based evaluation on EHRSQL test cases pointed to absolute-year expressions as the main remaining error source.</p>
+      </details>
+    </article>
+    <article class="card reveal" data-tilt>
+      <div class="card-viz"><canvas data-viz="triage"></canvas></div>
+      <p class="mono card-tag">UT Austin iSchool · 2025</p>
+      <h3>LLM post-training for medical symptom triage</h3>
+      <p class="card-short">Fine-tuning a biomedical LLM to read symptom narratives and route patients to the right department.</p>
+      <details>
+        <summary>Read more</summary>
+        <p>With Prof. Louis Gutierrez. Fine-tuned BioMistral-7B with LoRA on 7,475 symptom narratives, then applied direct preference optimization (DPO) with clinician-preference data. Post-training improved BLEU 3.7× and reached 87.0% exact match for disease and department prediction.</p>
       </details>
     </article>
   </div>
@@ -548,6 +583,6 @@
 
 <div id="catLayer" aria-hidden="true"></div>
 
-<script src="js/main.js?v=895702"></script>
+<script src="js/main.js?v=964908"></script>
 </body>
 </html>

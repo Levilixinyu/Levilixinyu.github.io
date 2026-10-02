@@ -415,10 +415,105 @@
         drawRaster(ctx, pool, 0, 8, w, h - 16);
       } else if (kind === "gait") {
         drawGait(ctx, w, h, t);
+      } else if (kind === "llmeval") {
+        drawLLMEval(ctx, w, h, t);
+      } else if (kind === "text2sql") {
+        drawText2SQL(ctx, w, h, t);
+      } else if (kind === "triage") {
+        drawTriage(ctx, w, h, t);
       }
     });
     requestAnimationFrame(vizLoop);
   }
+  /* ---------- AI4Health project cards ---------- */
+  const mono = (ctx, px, weight = "") => { ctx.font = `${weight} ${px}px JetBrains Mono, monospace`.trim(); };
+  // one wrapped-text helper: draws `str` revealed up to `n` chars, returns y after the last line
+  function typeLines(ctx, str, n, x, y, maxW, lh, color, hl) {
+    const words = str.split(" "); let line = "", lines = [];
+    words.forEach((wd) => { const t = line ? line + " " + wd : wd; if (ctx.measureText(t).width > maxW && line) { lines.push(line); line = wd; } else line = t; });
+    lines.push(line);
+    let shown = 0;
+    lines.forEach((ln, li) => {
+      const part = ln.slice(0, Math.max(0, n - shown)); shown += ln.length + 1;
+      if (hl) {                                           // highlight a sub-phrase (by character range in the full string)
+        let cx = x, start = str.indexOf(ln);
+        [...part].forEach((ch, k) => {
+          const gi = start + k, on = gi >= hl[0] && gi < hl[1];
+          ctx.fillStyle = on ? colors.gold : color; ctx.fillText(ch, cx, y + li * lh); cx += ctx.measureText(ch).width;
+        });
+      } else { ctx.fillStyle = color; ctx.fillText(part, x, y + li * lh); }
+    });
+    return y + lines.length * lh;
+  }
+
+  // gait/EMG summary → LLM → report lines scored for coverage (✓) or unsupported claims (⚠)
+  function drawLLMEval(ctx, w, h, t) {
+    const T = 7, p = (t % T) / T;
+    // input: knee angle curve + EMG on/off bars
+    const x0 = 10, iw = w * 0.26, y0 = 18, ih = h * 0.5;
+    ctx.globalAlpha = 0.9;
+    stroke(ctx, Array.from({ length: 41 }, (_, i) => { const q = i / 40; return [x0 + q * iw, y0 + ih * (0.85 - 0.6 * Math.exp(-(((q - 0.72) / 0.12) ** 2)) - 0.12 * Math.exp(-(((q - 0.14) / 0.06) ** 2)))]; }), colors.signal, 1.6);
+    [[0.05, 0.3], [0.55, 0.75], [0.85, 1]].forEach(([a, b], i) => { ctx.fillStyle = colors.zones[i + 1]; ctx.fillRect(x0 + a * iw, y0 + ih + 10 + i * 6, (b - a) * iw, 3); });
+    ctx.globalAlpha = 1;
+    mono(ctx, 9); ctx.fillStyle = colors.muted; ctx.fillText("gait + EMG", x0, h - 8);
+    // model box with a pulse travelling in
+    const mx = w * 0.36, mw = w * 0.14, my = h * 0.3, mh = h * 0.36;
+    const flow = (p * 3) % 1;
+    stroke(ctx, [[x0 + iw + 6, h * 0.48], [mx - 4, h * 0.48]], colors.line, 1.2);
+    ctx.fillStyle = colors.gold; ctx.beginPath(); ctx.arc(x0 + iw + 6 + flow * (mx - x0 - iw - 10), h * 0.48, 2.5, 0, Math.PI * 2); ctx.fill();
+    ctx.strokeStyle = colors.gold; ctx.lineWidth = 1.2; ctx.beginPath(); ctx.roundRect(mx, my, mw, mh, 6); ctx.stroke();
+    mono(ctx, 10, 600); ctx.fillStyle = colors.gold; ctx.textAlign = "center"; ctx.fillText("LLM", mx + mw / 2, my + mh / 2 + 4); ctx.textAlign = "left";
+    stroke(ctx, [[mx + mw + 4, h * 0.48], [w * 0.56, h * 0.48]], colors.line, 1.2);
+    // report: lines grow in, then get rated
+    const rx = w * 0.58, lines = [0.92, 0.78, 0.86, 0.64, 0.8], marks = ["ok", "ok", "warn", "ok", "ok"];
+    lines.forEach((len, i) => {
+      const appear = clamp((p - 0.08 - i * 0.08) / 0.08), y = 16 + i * ((h - 30) / lines.length);
+      ctx.fillStyle = colors.line; ctx.fillRect(rx + 14, y, (w - rx - 24) * len * appear, 5);
+      const judged = p > 0.55 + i * 0.05;
+      if (judged) { mono(ctx, 10, 600); ctx.fillStyle = marks[i] === "ok" ? colors.signal : colors.z5; ctx.fillText(marks[i] === "ok" ? "✓" : "⚠", rx, y + 6); }
+    });
+    mono(ctx, 9); ctx.fillStyle = colors.muted; ctx.fillText(p > 0.55 ? "coverage ✓ · unsupported ⚠" : "report", rx, h - 8);
+  }
+
+  // clinical question with a time expression → SQL with the temporal clause highlighted
+  const T2S = [
+    { q: "Which patients received vancomycin within 48 hours of admission?", t: "within 48 hours of admission",
+      sql: "SELECT subject_id FROM prescriptions WHERE drug = 'vancomycin' AND starttime <= admittime + INTERVAL '48 hours';", ts: "starttime <= admittime + INTERVAL '48 hours'" },
+    { q: "How many lactate tests were ordered in the last 7 days of each ICU stay?", t: "in the last 7 days of each ICU stay",
+      sql: "SELECT stay_id, COUNT(*) FROM labevents WHERE label = 'lactate' AND charttime >= outtime - INTERVAL '7 days' GROUP BY stay_id;", ts: "charttime >= outtime - INTERVAL '7 days'" },
+  ];
+  function drawText2SQL(ctx, w, h, t) {
+    const T = 9, k = Math.floor(t / T) % T2S.length, p = (t % T) / T, ex = T2S[k];
+    mono(ctx, 9.5); const lh = 12;
+    const qi = ex.q.indexOf(ex.t);
+    let y = typeLines(ctx, ex.q, Math.floor(clamp(p / 0.25) * ex.q.length), 10, 16, w - 20, lh, colors.ink, p > 0.28 ? [qi, qi + ex.t.length] : null);
+    if (p > 0.32) { mono(ctx, 9); ctx.fillStyle = colors.gold; ctx.fillText("⏱ temporal parser → template", 10, y + 2); }
+    mono(ctx, 9);
+    const si = ex.sql.indexOf(ex.ts);
+    typeLines(ctx, ex.sql, Math.floor(clamp((p - 0.4) / 0.4) * ex.sql.length), 10, y + 18, w - 20, 11, colors.signal, [si, si + ex.ts.length]);
+  }
+
+  // symptom narrative → fine-tuned model → department probabilities
+  const TRIAGE = [
+    { s: "\"Chest tightness and shortness of breath when I climb stairs, worse this week.\"", d: [["Cardiology", 0.78], ["Pulmonology", 0.15], ["Gastroenterology", 0.04]] },
+    { s: "\"Burning pain in my upper stomach after meals, plus bloating and nausea.\"", d: [["Gastroenterology", 0.82], ["Cardiology", 0.09], ["General medicine", 0.06]] },
+    { s: "\"Sudden numbness in my left arm and trouble finding words this morning.\"", d: [["Neurology", 0.86], ["Emergency", 0.10], ["Cardiology", 0.03]] },
+  ];
+  function drawTriage(ctx, w, h, t) {
+    const T = 6, k = Math.floor(t / T) % TRIAGE.length, p = (t % T) / T, ex = TRIAGE[k];
+    mono(ctx, 9.5);
+    const y = typeLines(ctx, ex.s, Math.floor(clamp(p / 0.3) * ex.s.length), 10, 16, w - 20, 12, colors.ink);
+    if (p > 0.33) { mono(ctx, 9); ctx.fillStyle = colors.gold; ctx.fillText("BioMistral-7B · LoRA + DPO", 10, y + 2); }
+    const g = clamp((p - 0.4) / 0.3), bx = 112, bw = w - bx - 44;
+    ex.d.forEach(([name, v], i) => {
+      const by = y + 16 + i * 13;
+      mono(ctx, 9); ctx.fillStyle = i === 0 ? colors.ink : colors.muted; ctx.fillText(name, 10, by + 7);
+      ctx.fillStyle = colors.line; ctx.fillRect(bx, by, bw, 7);
+      ctx.fillStyle = i === 0 ? colors.signal : colors.muted; ctx.fillRect(bx, by, bw * v * g, 7);
+      if (g > 0.95) { ctx.fillStyle = colors.muted; ctx.fillText(v.toFixed(2), bx + bw + 6, by + 7); }
+    });
+  }
+
   function drawGait(ctx, w, h, t) {
     const phase = (t * 0.9) % 1;
     // same normative walking kinematics as the gait mini-lab; front (ink) leg strikes at phase 0
